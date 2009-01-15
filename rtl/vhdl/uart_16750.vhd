@@ -3,9 +3,10 @@
 --
 -- Author:   Sebastian Witt
 -- Date:     29.01.2008
--- Version:  1.0
+-- Version:  1.1
 --
 -- History:  1.0 - Initial version
+--           1.1 - THR empty interrupt register connected to RST
 --
 --
 -- This code is free software; you can redistribute it and/or
@@ -467,6 +468,7 @@ begin
     UART_IIC_THREI: process (CLK, RST)
     begin
         if (RST = '1') then
+            iTHRInterrupt <= '0';
         elsif (CLK'event and CLK = '1') then
             if (iLSR_THRERE = '1' or iFCR_TXFIFOReset = '1' or (iIERWrite = '1' and iDIN(1) = '1' and iLSR_THRE = '1')) then
                 iTHRInterrupt <= '1';           -- Set on THRE, TX FIFO reset (FIFO enable) or ETBEI enable
