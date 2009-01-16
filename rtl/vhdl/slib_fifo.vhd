@@ -3,7 +3,7 @@
 --
 -- Author:   Sebastian Witt
 -- Date:     29.01.2008
--- Version:  1.2
+-- Version:  1.3
 --
 -- This code is free software; you can redistribute it and/or
 -- modify it under the terms of the GNU Lesser General Public
@@ -55,22 +55,20 @@ architecture rtl of slib_fifo is
     signal iUSAGE   : std_logic_vector(SIZE_E-1 downto 0);      -- FIFO usage
     -- FIFO memory
     type FIFO_Mem_Type is array (2**SIZE_E-1 downto 0) of std_logic_vector(WIDTH-1 downto 0);
-    signal iFIFOMem : FIFO_Mem_Type;
+    signal iFIFOMem : FIFO_Mem_Type := (others => (others => '0'));
 
 begin
     -- Full signal (biggest difference of read and write address)
     iFULL <= '1' when (iRDAddr(SIZE_E-1 downto 0) = iWRAddr(SIZE_E-1 downto 0)) and
                       (iRDAddr(SIZE_E)           /= iWRAddr(SIZE_E)) else '0';
 
-    -- Empty signal (read address same as write address)
-    iEMPTY <= '1' when (iRDAddr = iWRAddr) else '0';
-
-    -- Write and read address counter
+    -- Write/read address counter and empty signal
     FF_ADDR: process (RST, CLK)
     begin
         if (RST = '1') then
             iWRAddr <= (others => '0');
             iRDAddr <= (others => '0');
+            iEMPTY  <= '1';
         elsif (CLK'event and CLK='1') then
             if (WRITE = '1' and iFULL = '0') then       -- Write to FIFO
                 iWRAddr <= iWRAddr + '1';
@@ -84,6 +82,12 @@ begin
                 iWRAddr <= (others => '0');
                 iRDAddr <= (others => '0');
             end if;
+
+            if (iRDAddr = iWRAddr) then                 -- Empty signal (read address same as write address)
+                iEMPTY <= '1';
+            else
+                iEMPTY <= '0';
+            end if;
         end if;
     end process;
 
@@ -96,6 +100,7 @@ begin
             if (WRITE = '1' and iFULL = '0') then
                 iFIFOMem(CONV_INTEGER(iWRAddr(SIZE_E-1 downto 0))) <= D;
             end if;
+            Q <= iFIFOMem(CONV_INTEGER(iRDAddr(SIZE_E-1 downto 0)));
         end if;
     end process;
 
@@ -119,7 +124,6 @@ begin
     end process;
 
     -- Output signals
-    Q     <= iFIFOMem(CONV_INTEGER(iRDAddr(SIZE_E-1 downto 0)));
     EMPTY <= iEMPTY;
     FULL  <= iFULL;
     USAGE <= iUSAGE;
