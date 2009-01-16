@@ -3,10 +3,11 @@
 --
 -- Author:   Sebastian Witt
 -- Date:     29.01.2008
--- Version:  1.1
+-- Version:  1.2
 --
 -- History:  1.0 - Initial version
 --           1.1 - THR empty interrupt register connected to RST
+--           1.2 - Registered outputs
 --
 --
 -- This code is free software; you can redistribute it and/or
@@ -943,14 +944,58 @@ begin
     end process;
 
 
-    -- Output signals
-    DDIS        <= '0' when CS = '1' and RD = '1' else '1';
-    OUT1N       <= '1' when iMCR_LOOP = '1' or iMCR_OUT1 = '0' else '0';
-    OUT2N       <= '1' when iMCR_LOOP = '1' or iMCR_OUT2 = '0' else '0';
-    BAUDOUTN    <= '1' when iBaudtick16x = '0' else '0';
-    RTSN        <= '1' when iMCR_LOOP = '1' or iMCR_RTS = '0' else '0';
-    DTRN        <= '1' when iMCR_LOOP = '1' or iMCR_DTR = '0' else '0';
-    SOUT        <= '1' when iMCR_LOOP = '1' or iSOUT = '1' else '0';
+    -- Output registers
+    UART_OUTREGS: process (CLK, RST)
+    begin
+        if (RST = '1') then
+            DDIS     <= '0';
+            BAUDOUTN <= '0';
+            OUT1N    <= '0';
+            OUT2N    <= '0';
+            RTSN     <= '0';
+            DTRN     <= '0';
+            SOUT     <= '0';
+        elsif (CLK'event and CLK = '1') then
+            -- Default values
+            DDIS     <= '0';
+            BAUDOUTN <= '0';
+            OUT1N    <= '0';
+            OUT2N    <= '0';
+            RTSN     <= '0';
+            DTRN     <= '0';
+            SOUT     <= '0';
+
+            -- DDIS
+            if (CS = '0' or RD = '0') then
+                DDIS <= '1';
+            end if;
+            -- BAUDOUTN
+            if (iBaudtick16x = '0') then
+                BAUDOUTN <= '1';
+            end if;
+            -- OUT1N
+            if (iMCR_LOOP = '1' or iMCR_OUT1 = '0') then
+                OUT1N <= '1';
+            end if;
+            -- OUT2N
+            if (iMCR_LOOP = '1' or iMCR_OUT2 = '0') then
+                OUT2N <= '1';
+            end if;
+            -- RTS
+            if (iMCR_LOOP = '1' or iMCR_RTS = '0') then
+                RTSN <= '1';
+            end if;
+            -- DTR
+            if (iMCR_LOOP = '1' or iMCR_DTR = '0') then
+                DTRN <= '1';
+            end if;
+            -- SOUT
+            if (iMCR_LOOP = '1' or iSOUT = '1') then
+                SOUT <= '1';
+            end if;
+        end if;
+    end process;
+
 
     -- UART data output
     UART_DOUT: process (A, iLCR_DLAB, iRBR, iDLL, iDLM, iIER, iIIR, iLCR, iMCR, iLSR, iMSR, iSCR)
