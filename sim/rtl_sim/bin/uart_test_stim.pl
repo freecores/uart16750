@@ -2,16 +2,17 @@
 
 use strict;
 
-# Create stimulus/test file for 16550 compatible UART cores
+# Create stimulus/test file for 16550/16750 compatible UART cores
 #
 # Author:   Sebastian Witt
 # Date:     06.02.2008
-# Version:  1.2
+# Version:  1.3
 # License:  GPL
 #
 # History:  1.0 - Initial version
 #           1.1 - Update
 #           1.2 - FIFO test update
+#           1.3 - Automatic flow control tests
 #
 
 
@@ -23,6 +24,7 @@ use constant CYCLE => 30e-9;       # Cycle time
 use constant LOCAL_LOOP => 1;       # Use UART local loopback
 use constant INITREGS => 1;         # Initialize registers
 #use constant INITREGS => 0;        # Initialize registers
+use constant TEST_AFC => 1;         # Test automatic flow control
 use constant UART_ADDRESS => 0x3f8; # UART base address
 
 # Prototypes
@@ -462,6 +464,7 @@ sub uart_check_fifo ()
     uart_read  (IIR, IIR_RDAI | IIR_FE);
     uart_read  (LSR, LSR_DR | LSR_THRE | LSR_TEMT);
     uart_write (FCR, FCR_FE | FCR_RXFR);
+    uart_wait  (1);
     uart_read  (LSR, LSR_THRE | LSR_TEMT);
     uart_read  (IIR, IIR_THRI | IIR_FE);
     uart_read  (IIR, IIR_NONE | IIR_FE);
@@ -540,6 +543,7 @@ sub uart_check_fifo ()
     uart_rrbr  (0x00);
     uart_read  (LSR, LSR_DR | LSR_THRE | LSR_TEMT | LSR_RXFE);
     uart_rrbr  (0x01);
+    uart_wait  (1);
     uart_read  (IIR, IIR_RLSI | IIR_FE);
     uart_read  (LSR, LSR_DR | LSR_FE | LSR_BI | LSR_THRE | LSR_TEMT | LSR_RXFE);
     uart_read  (LSR, LSR_DR | LSR_THRE | LSR_TEMT | LSR_RXFE);
@@ -555,6 +559,7 @@ sub uart_check_fifo ()
     uart_rrbr  (0x02);
     uart_read  (LSR, LSR_DR | LSR_THRE | LSR_TEMT | LSR_RXFE);
     uart_rrbr  (0x03);
+    uart_wait  (1);
     uart_read  (IIR, IIR_RLSI | IIR_FE);
     uart_read  (LSR, LSR_DR | LSR_FE | LSR_BI | LSR_THRE | LSR_TEMT | LSR_RXFE);
     uart_read  (IIR, IIR_NONE | IIR_FE);
@@ -585,10 +590,97 @@ sub uart_check_fifo ()
     logmessage ("UART: FIFO test end");
 }
 
+sub uart_check_afc ()
+{
+    logmessage ("UART: Automatic flow control test");
+    uart_write (LCR, LCR_WLS8);
+    uart_read  (LCR, LCR_WLS8);
+    uart_write (IER, IER_ERBI | IER_ETBEI | IER_ELSI | IER_EDSSI);
+    uart_read  (IER, IER_ERBI | IER_ETBEI | IER_ELSI | IER_EDSSI);
+    logmessage ("UART: Setting FIFO trigger level to 4 bytes");
+    uart_write (FCR, FCR_FE | FCR_RT4);
+    uart_read  (IIR, IIR_THRI | IIR_FE);
+    uart_read  (IIR, IIR_NONE | IIR_FE);
+    logmessage ("UART: Enabling Auto-CTS");
+    uart_write (MCR, ($MCR & ~(MCR_DTR | MCR_RTS | MCR_OUT1 | MCR_OUT2)) | MCR_AFE);
+    uart_read  (MSR, 0);
+    uart_read  (IIR, IIR_NONE | IIR_FE);
+    logmessage ("UART: Send 3 words");
+    uart_send  (3);
+    uart_wait  (6);
+    logmessage ("UART: Expecting no data was sent");
+    uart_read  (IIR, IIR_NONE | IIR_FE);
+    uart_read  (LSR, 0);
+    logmessage ("UART: Enabling Auto-RTS");
+    uart_write (MCR, $MCR | MCR_RTS);
+    logmessage ("UART: Check if CTS is enabled");
+    uart_read  (IIR, IIR_NONE | IIR_FE);
+    uart_read  (MSR, MSR_DCTS | MSR_CTS);
+    uart_wait  (8);
+    uart_read  (IIR, IIR_CTOI | IIR_FE);
+    uart_read  (LSR, LSR_DR | LSR_THRE | LSR_TEMT);
+    logmessage ("UART: Check if CTS is enabled");
+    uart_read  (MSR, MSR_CTS);
+    logmessage ("UART: Send 1 word");
+    uart_send  (1);
+    uart_wait  (2);
+    logmessage ("UART: Check if CTS is disabled");
+    uart_read  (MSR, MSR_DCTS);
+    logmessage ("UART: Check LSR");
+    uart_read  (LSR, LSR_DR | LSR_THRE | LSR_TEMT);
+    uart_read  (IIR, IIR_CTOI | IIR_FE);
+    logmessage ("UART: Receive 3 words");
+    uart_recv  (3);
+    logmessage ("UART: Check if CTS is disabled");
+    uart_read  (MSR, 0);
+    logmessage ("UART: Receive 1 word");
+    uart_recv  (1);
+    logmessage ("UART: Check LSR");
+    uart_read  (LSR, LSR_THRE | LSR_TEMT);
+    uart_read  (IIR, IIR_THRI | IIR_FE);
+    uart_read  (IIR, IIR_NONE | IIR_FE);
+    logmessage ("UART: Check if CTS is enabled again");
+    uart_read  (MSR, MSR_DCTS | MSR_CTS);
+    logmessage ("UART: Send 6 words");
+    uart_send  (5);
+    uart_send  (1);
+    uart_wait  (4);
+    logmessage ("UART: Check if CTS is disabled");
+    uart_read  (MSR, MSR_DCTS);
+    logmessage ("UART: Check LSR");
+    uart_read  (LSR, LSR_DR);
+    uart_wait  (1);
+    logmessage ("UART: Receive 5 words");
+    uart_recv  (5);
+    uart_read  (IIR, IIR_NONE | IIR_FE);
+    uart_wait  (2);
+    logmessage ("UART: Check LSR");
+    uart_read  (LSR, LSR_DR | LSR_THRE | LSR_TEMT);
+    logmessage ("UART: Check if CTS is enabled again");
+    uart_read  (MSR, MSR_DCTS | MSR_CTS);
+    logmessage ("UART: Receive 1 words");
+    uart_recv  (1);
+    logmessage ("UART: Check LSR");
+    uart_read  (LSR, LSR_THRE | LSR_TEMT);
+    uart_read  (IIR, IIR_THRI | IIR_FE);
+    uart_read  (IIR, IIR_NONE | IIR_FE);
+    logmessage ("UART: Check if CTS is enabled");
+    uart_read  (MSR, MSR_CTS);
+    logmessage ("UART: Disable Automatic flow control");
+    uart_write (MCR, $MCR & ~(MCR_DTR | MCR_RTS | MCR_OUT1 | MCR_OUT2 | MCR_AFE));
+    uart_read  (MSR, MSR_DCTS);
+    uart_read  (IIR, IIR_NONE | IIR_FE);
+    uart_read  (MCR, $MCR);
+    logmessage ("UART: Automatic flow control test finished");
+}
+
 uart_check_control_lines ();
 uart_check_interrupt_control ();
 uart_check_default ();
 uart_check_fifo ();
+if (TEST_AFC) {
+    uart_check_afc ();
+}
 
 ##################################################################
 # End main process
