@@ -23,7 +23,6 @@
 
 LIBRARY IEEE;
 USE IEEE.std_logic_1164.all;
-USE IEEE.std_logic_unsigned.all;
 USE IEEE.numeric_std.all;
 
 
@@ -50,9 +49,9 @@ architecture rtl of slib_fifo is
     -- Signals
     signal iEMPTY   : std_logic;                                -- Internal EMPTY
     signal iFULL    : std_logic;                                -- Internal FULL
-    signal iWRAddr  : std_logic_vector(SIZE_E downto 0);        -- FIFO write address
-    signal iRDAddr  : std_logic_vector(SIZE_E downto 0);        -- FIFO read address
-    signal iUSAGE   : std_logic_vector(SIZE_E-1 downto 0);      -- FIFO usage
+    signal iWRAddr  : unsigned(SIZE_E downto 0);                -- FIFO write address
+    signal iRDAddr  : unsigned(SIZE_E downto 0);                -- FIFO read address
+    signal iUSAGE   : unsigned(SIZE_E-1 downto 0);              -- FIFO usage
     -- FIFO memory
     type FIFO_Mem_Type is array (2**SIZE_E-1 downto 0) of std_logic_vector(WIDTH-1 downto 0);
     signal iFIFOMem : FIFO_Mem_Type := (others => (others => '0'));
@@ -71,11 +70,11 @@ begin
             iEMPTY  <= '1';
         elsif (CLK'event and CLK='1') then
             if (WRITE = '1' and iFULL = '0') then       -- Write to FIFO
-                iWRAddr <= iWRAddr + '1';
+                iWRAddr <= iWRAddr + 1;
             end if;
 
             if (READ = '1' and iEMPTY = '0') then       -- Read from FIFO
-                iRDAddr <= iRDAddr + '1';
+                iRDAddr <= iRDAddr + 1;
             end if;
 
             if (CLEAR = '1') then                       -- Reset FIFO
@@ -98,9 +97,9 @@ begin
             --iFIFOMem(2**SIZE_E-1 downto 0) <= (others => (others => '0'));
         elsif (CLK'event and CLK = '1') then
             if (WRITE = '1' and iFULL = '0') then
-                iFIFOMem(CONV_INTEGER(iWRAddr(SIZE_E-1 downto 0))) <= D;
+                iFIFOMem(to_integer(iWRAddr(SIZE_E-1 downto 0))) <= D;
             end if;
-            Q <= iFIFOMem(CONV_INTEGER(iRDAddr(SIZE_E-1 downto 0)));
+            Q <= iFIFOMem(to_integer(iRDAddr(SIZE_E-1 downto 0)));
         end if;
     end process;
 
@@ -114,10 +113,10 @@ begin
                 iUSAGE <= (others => '0');
             else
                 if (READ = '0' and WRITE = '1' and iFULL = '0') then
-                    iUSAGE <= iUSAGE + '1';
+                    iUSAGE <= iUSAGE + 1;
                 end if;
                 if (WRITE = '0' and READ = '1' and iEMPTY = '0') then
-                    iUSAGE <= iUSAGE - '1';
+                    iUSAGE <= iUSAGE - 1;
                 end if;
             end if;
         end if;
@@ -126,7 +125,7 @@ begin
     -- Output signals
     EMPTY <= iEMPTY;
     FULL  <= iFULL;
-    USAGE <= iUSAGE;
+    USAGE <= std_logic_vector(iUSAGE);
 
 end rtl;
 
