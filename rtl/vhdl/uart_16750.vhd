@@ -3,11 +3,12 @@
 --
 -- Author:   Sebastian Witt
 -- Date:     29.01.2008
--- Version:  1.2
+-- Version:  1.3
 --
 -- History:  1.0 - Initial version
 --           1.1 - THR empty interrupt register connected to RST
 --           1.2 - Registered outputs
+--           1.3 - Automatic flow control
 --
 --
 -- This code is free software; you can redistribute it and/or
@@ -28,7 +29,6 @@
 
 LIBRARY IEEE;
 USE IEEE.std_logic_1164.all;
-USE IEEE.std_logic_unsigned.all;
 USE IEEE.numeric_std.all;
 
 -- Serial UART
@@ -110,6 +110,7 @@ architecture rtl of uart_16750 is
         THI         : in std_logic;                             -- Transmitter holding register empty interrupt
         RDA         : in std_logic;                             -- Receiver data available
         CTI         : in std_logic;                             -- Character timeout indication
+        AFE         : in std_logic;                             -- Automatic flow control enable
         MSR         : in std_logic_vector(3 downto 0);          -- MSR 3:0
         IIR         : out std_logic_vector(3 downto 0);         -- IIR 3:0
         INT         : out std_logic                             -- Interrupt
@@ -362,10 +363,12 @@ architecture rtl of uart_16750 is
     signal iFEIncrement     : std_logic;                        -- FIFO error counter increment
     signal iFEDecrement     : std_logic;                        -- FIFO error counter decrement
     signal iRDAInterrupt    : std_logic;                        -- Receiver data available interrupt (DA or FIFO trigger level)
-    signal iTimeoutCount    : std_logic_vector(5 downto 0);     -- Character timeout counter (FIFO mode)
+    signal iTimeoutCount    : unsigned(5 downto 0);             -- Character timeout counter (FIFO mode)
     signal iCharTimeout     : std_logic;                        -- Character timeout indication (FIFO mode)
     signal iLSR_THRERE      : std_logic;                        -- LSR THRE rising edge for interrupt generation
     signal iTHRInterrupt    : std_logic;                        -- Transmitter holding register empty interrupt
+    signal iTXEnable        : std_logic;                        -- Transmitter enable signal
+    signal iRTS             : std_logic;                        -- Internal RTS signal with/without automatic flow control
 
 
 begin
@@ -460,6 +463,7 @@ begin
                                        THI => iTHRInterrupt,
                                        RDA => iRDAInterrupt,
                                        CTI => iCharTimeout,
+                                       AFE => iMCR_AFE,
                                        MSR => iMSR(3 downto 0),
                                        IIR => iIIR(3 downto 0),
                                        INT => INT
@@ -501,7 +505,7 @@ begin
             if (iRXFIFOEmpty = '1' or iRBRRead = '1' or iRXFIFOWrite = '1') then
                 iTimeoutCount <= (others => '0');
             elsif (iRXFIFOEmpty = '0' and iBaudtick2x = '1' and iTimeoutCount(5) = '0') then
-                iTimeoutCount <= iTimeoutCount + '1';
+                iTimeoutCount <= iTimeoutCount + 1;
             end if;
 
             -- Timeout indication
@@ -683,7 +687,7 @@ begin
     iLSR_TEMT       <= '1' when iTXRunning = '0' and iLSR_THRE = '1' else '0';
 
     -- Modem status register
-    iMSR_CTS <= '1' when (iMCR_LOOP = '1' and iMCR_RTS = '1')  or (iMCR_LOOP = '0' and iCTSn = '0') else '0';
+    iMSR_CTS <= '1' when (iMCR_LOOP = '1' and iRTS = '1')      or (iMCR_LOOP = '0' and iCTSn = '0') else '0';
     iMSR_DSR <= '1' when (iMCR_LOOP = '1' and iMCR_DTR = '1')  or (iMCR_LOOP = '0' and iDSRn = '0') else '0';
     iMSR_RI  <= '1' when (iMCR_LOOP = '1' and iMCR_OUT1 = '1') or (iMCR_LOOP = '0' and iRIn  = '0') else '0';
     iMSR_DCD <= '1' when (iMCR_LOOP = '1' and iMCR_OUT2 = '1') or (iMCR_LOOP = '0' and iDCDn = '0') else '0';
@@ -865,6 +869,9 @@ begin
     iRXClear <= '0';
     iSIN <= iSINr when iMCR_LOOP = '0' else iSOUT;
 
+    -- Transmitter enable signal
+    -- TODO: Use iCTSNs instead of iMSR_CTS? Input filter increases delay for Auto-CTS recognition.
+    iTXEnable <= '1' when iTXFIFOEmpty = '0' and (iMCR_AFE = '0' or (iMCR_AFE = '1' and iMSR_CTS = '1')) else '0';
 
     -- Transmitter process
     UART_TXPROC: process (CLK, RST)
@@ -884,7 +891,7 @@ begin
             iTXRunning  <= '0';
 
             case State is
-                when IDLE       =>  if (iTXFIFOEmpty = '0') then
+                when IDLE       =>  if (iTXEnable = '1') then
                                         iTXStart <= '1';            -- Start transmitter
                                         State := TXSTART;
                                     else
@@ -943,6 +950,21 @@ begin
         end if;
     end process;
 
+    -- Automatic flow control
+    UART_AFC: process (CLK, RST)
+    begin
+        if (RST = '1') then
+            iRTS <= '0';
+        elsif (CLK'event and CLK = '1') then
+            if (iMCR_RTS = '0' or (iMCR_AFE = '1' and iRXFIFOTrigger = '1')) then
+                -- Deassert when MCR_RTS is not set or AFC is enabled and the RX FIFO trigger level is reached
+                iRTS <= '0';
+            elsif (iMCR_RTS = '1' and (iMCR_AFE = '0' or (iMCR_AFE = '1' and iRXFIFOEmpty = '1'))) then
+                -- Assert when MCR_RTS is set and AFC is disabled or when AFC is enabled and the RX FIFO is empty
+                iRTS <= '1';
+            end if;
+        end if;
+    end process;
 
     -- Output registers
     UART_OUTREGS: process (CLK, RST)
@@ -982,7 +1004,7 @@ begin
                 OUT2N <= '1';
             end if;
             -- RTS
-            if (iMCR_LOOP = '1' or iMCR_RTS = '0') then
+            if (iMCR_LOOP = '1' or iRTS = '0') then
                 RTSN <= '1';
             end if;
             -- DTR
