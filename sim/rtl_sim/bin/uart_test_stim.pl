@@ -6,26 +6,31 @@ use strict;
 #
 # Author:   Sebastian Witt
 # Date:     06.02.2008
-# Version:  1.3
+# Version:  1.4
 # License:  GPL
 #
 # History:  1.0 - Initial version
 #           1.1 - Update
 #           1.2 - FIFO test update
 #           1.3 - Automatic flow control tests
+#           1.4 - FIFO 64 tests
 #
 
 
 #
 # Global control settings
 #
-use constant CYCLE => 30e-9;       # Cycle time
-#use constant CYCLE => 1e-9;         # Cycle time
-use constant LOCAL_LOOP => 1;       # Use UART local loopback
-use constant INITREGS => 1;         # Initialize registers
-#use constant INITREGS => 0;        # Initialize registers
-use constant TEST_AFC => 1;         # Test automatic flow control
-use constant UART_ADDRESS => 0x3f8; # UART base address
+use constant CYCLE => 30e-9;            # Cycle time
+#use constant CYCLE => 1e-9;             # Cycle time
+use constant LOCAL_LOOP     => 1;       # Use UART local loopback
+use constant INITREGS       => 1;       # Initialize registers
+use constant TEST_CONTROL   => 1;       # Test control lines
+use constant TEST_INTERRUPT => 1;       # Test interrupts
+use constant TEST_DEFAULT   => 1;       # Test standard modes
+use constant TEST_FIFO      => 1;       # Test 64 byte FIFO mode
+use constant TEST_FIFO64    => 1;       # Test 64 byte FIFO mode
+use constant TEST_AFC       => 1;       # Test automatic flow control
+use constant UART_ADDRESS   => 0x3f8;   # UART base address
 
 # Prototypes
 sub logmessage($);          # Message
@@ -70,11 +75,14 @@ use constant {
     FCR_RXFR    => 0x02,
     FCR_TXFR    => 0x04,
     FCR_DMS     => 0x08,
-    FCR_F64E    => 0x10,
+    FCR_F64E    => 0x20,
     FCR_RT1     => 0x00,
     FCR_RT4     => 0x40,
     FCR_RT8     => 0x80,
     FCR_RT14    => 0xC0,
+    FCR_RT16    => 0x40,
+    FCR_RT32    => 0x80,
+    FCR_RT56    => 0xC0,
     LCR_WLS5    => 0x00,
     LCR_WLS6    => 0x01,
     LCR_WLS7    => 0x02,
@@ -188,6 +196,8 @@ sub uart_check_control_lines ()
     uart_read  (IIR, IIR_NONE);
     uart_write (MCR, $MCR | MCR_OUT1);
     uart_read  (MCR, $MCR);
+    uart_read  (MSR, MSR_CTS | MSR_DSR | MSR_RI);
+    uart_read  (IIR, IIR_NONE);
     uart_write (MCR, $MCR & ~MCR_OUT1);
     uart_read  (MCR, $MCR);
     uart_read  (IIR, IIR_MSRI);
@@ -590,6 +600,104 @@ sub uart_check_fifo ()
     logmessage ("UART: FIFO test end");
 }
 
+sub uart_check_fifo64 ()
+{
+    logmessage ("UART: Testing FIFO in 64 byte mode...");
+    uart_write (IER, IER_ERBI | IER_ETBEI | IER_ELSI | IER_EDSSI);
+    uart_write (FCR, FCR_F64E | FCR_FE | FCR_RXFR | FCR_TXFR);
+    uart_read  (IIR, IIR_THRI | IIR_FE);
+    uart_write (LCR, $LCR | LCR_DLAB);
+    uart_write (FCR, FCR_F64E | FCR_FE);
+    uart_write (LCR, $LCR & ~LCR_DLAB);
+    uart_read  (IIR, IIR_NONE | IIR_FE | IIR_F64E);
+
+    uart_read  (LSR, LSR_THRE | LSR_TEMT);
+    logmessage ("UART: Testing FIFO trigger level 1 byte...");
+    uart_write (FCR, FCR_FE | FCR_RT1);
+    uart_read  (IIR, IIR_NONE | IIR_FE | IIR_F64E);
+    uart_send  (1);
+    uart_wait  (4);
+    uart_read  (IIR, IIR_CTOI | IIR_FE | IIR_F64E);
+    uart_read  (LSR, LSR_DR | LSR_THRE | LSR_TEMT);
+    uart_rrbr  (0x00);
+    uart_read  (IIR, IIR_THRI | IIR_FE | IIR_F64E);
+    uart_read  (LSR, LSR_THRE | LSR_TEMT);
+    uart_read  (IIR, IIR_NONE | IIR_FE | IIR_F64E);
+
+    logmessage ("UART: Testing FIFO trigger level 16 byte...");
+    uart_write (FCR, FCR_FE | FCR_RT16);
+    uart_send  (15);
+    uart_wait  (15);
+    uart_read  (IIR, IIR_CTOI | IIR_FE | IIR_F64E);
+    uart_read  (LSR, LSR_DR | LSR_THRE | LSR_TEMT);
+    uart_rrbr  (0x00);
+    uart_read  (IIR, IIR_THRI | IIR_FE | IIR_F64E);
+    uart_read  (IIR, IIR_NONE | IIR_FE | IIR_F64E);
+    uart_send  (3);
+    uart_wait  (3);
+    uart_read  (IIR, IIR_RDAI | IIR_FE | IIR_F64E);
+    uart_read  (LSR, LSR_DR | LSR_THRE | LSR_TEMT);
+    uart_rrbr  (0x01);
+    uart_read  (IIR, IIR_RDAI | IIR_FE | IIR_F64E);
+    uart_rrbr  (0x02);
+    uart_read  (IIR, IIR_THRI | IIR_FE | IIR_F64E);
+    uart_recv  (12, 3);
+    uart_recv  (3);
+    uart_read  (LSR, LSR_THRE | LSR_TEMT);
+    uart_read  (IIR, IIR_NONE | IIR_FE | IIR_F64E);
+
+    logmessage ("UART: Testing FIFO trigger level 32 byte...");
+    uart_write (FCR, FCR_FE | FCR_RT32);
+    uart_send  (31);
+    uart_wait  (31);
+    uart_read  (IIR, IIR_CTOI | IIR_FE | IIR_F64E);
+    uart_read  (LSR, LSR_DR | LSR_THRE | LSR_TEMT);
+    uart_rrbr  (0x00);
+    uart_read  (IIR, IIR_THRI | IIR_FE | IIR_F64E);
+    uart_read  (IIR, IIR_NONE | IIR_FE | IIR_F64E);
+    uart_send  (3);
+    uart_wait  (3);
+    uart_read  (IIR, IIR_RDAI | IIR_FE | IIR_F64E);
+    uart_read  (LSR, LSR_DR | LSR_THRE | LSR_TEMT);
+    uart_rrbr  (0x01);
+    uart_read  (IIR, IIR_RDAI | IIR_FE | IIR_F64E);
+    uart_rrbr  (0x02);
+    uart_read  (IIR, IIR_THRI | IIR_FE | IIR_F64E);
+    uart_recv  (28, 3);
+    uart_recv  (3);
+    uart_read  (LSR, LSR_THRE | LSR_TEMT);
+    uart_read  (IIR, IIR_NONE | IIR_FE | IIR_F64E);
+
+    logmessage ("UART: Testing FIFO trigger level 56 byte...");
+    uart_write (FCR, FCR_FE | FCR_RT56);
+    uart_send  (55);
+    uart_wait  (55);
+    uart_read  (IIR, IIR_CTOI | IIR_FE | IIR_F64E);
+    uart_read  (LSR, LSR_DR | LSR_THRE | LSR_TEMT);
+    uart_rrbr  (0x00);
+    uart_read  (IIR, IIR_THRI | IIR_FE | IIR_F64E);
+    uart_read  (IIR, IIR_NONE | IIR_FE | IIR_F64E);
+    uart_send  (3);
+    uart_wait  (3);
+    uart_read  (IIR, IIR_RDAI | IIR_FE | IIR_F64E);
+    uart_read  (LSR, LSR_DR | LSR_THRE | LSR_TEMT);
+    uart_rrbr  (0x01);
+    uart_read  (IIR, IIR_RDAI | IIR_FE | IIR_F64E);
+    uart_rrbr  (0x02);
+    uart_read  (IIR, IIR_THRI | IIR_FE | IIR_F64E);
+    uart_recv  (52, 3);
+    uart_recv  (3);
+    uart_read  (LSR, LSR_THRE | LSR_TEMT);
+    uart_read  (IIR, IIR_NONE | IIR_FE | IIR_F64E);
+
+    uart_write (LCR, $LCR | LCR_DLAB);
+    uart_write (FCR, $FCR & ~FCR_F64E);
+    uart_write (LCR, $LCR & ~LCR_DLAB);
+    uart_read  (IIR, IIR_NONE | IIR_FE);
+
+    logmessage ("UART: FIFO64 test end");
+}
+
 sub uart_check_afc ()
 {
     logmessage ("UART: Automatic flow control test");
@@ -674,10 +782,21 @@ sub uart_check_afc ()
     logmessage ("UART: Automatic flow control test finished");
 }
 
-uart_check_control_lines ();
-uart_check_interrupt_control ();
-uart_check_default ();
-uart_check_fifo ();
+if (TEST_CONTROL) {
+    uart_check_control_lines ();
+}
+if (TEST_INTERRUPT) {
+    uart_check_interrupt_control ();
+}
+if (TEST_DEFAULT) {
+    uart_check_default ();
+}
+if (TEST_FIFO) {
+    uart_check_fifo ();
+}
+if (TEST_FIFO64) {
+    uart_check_fifo64 ();
+}
 if (TEST_AFC) {
     uart_check_afc ();
 }

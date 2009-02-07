@@ -1,10 +1,10 @@
-330000000 fs: UART: Initializing...                                                      
+330 ns: UART: Initializing...                                                      
 UART write: 0x1 : 0x00
 UART write: 0x2 : 0x00
 UART write: 0x3 : 0x00
 UART write: 0x4 : 0x00
 UART write: 0x7 : 0x00
-780000000 fs: UART: Checking registers after reset...                                    
+780 ns: UART: Checking registers after reset...                                    
 UART read:  0x0 : 0x00
 UART read:  0x0 : 0x00
 UART read:  0x1 : 0x00
@@ -14,10 +14,10 @@ UART read:  0x4 : 0x00
 UART read:  0x5 : 0x60
 UART read:  0x6 : 0x0F
 UART read:  0x7 : 0x00
-1860000000 fs: UART: Enabling local LOOP mode...                                          
+1860 ns: UART: Enabling local LOOP mode...                                          
 UART write: 0x4 : 0x10
 UART read:  0x4 : 0x10
-2070000000 fs: UART: Setting baudrate to 115200                                           
+2070 ns: UART: Setting baudrate to 115200                                           
 UART write: 0x3 : 0x80
 UART write: 0x0 : 0x01
 UART write: 0x1 : 0x00
@@ -26,12 +26,12 @@ UART read:  0x0 : 0x01
 UART read:  0x1 : 0x00
 UART write: 0x3 : 0x00
 UART read:  0x3 : 0x00
-2910000000 fs: UART: Enabling interrupts...                                               
+2910 ns: UART: Enabling interrupts...                                               
 UART write: 0x1 : 0x0F
 UART read:  0x1 : 0x0F
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-3360000000 fs: UART: Checking control lines...                                            
+3360 ns: UART: Checking control lines...                                            
 UART write: 0x4 : 0x11
 UART read:  0x4 : 0x11
 UART read:  0x2 : 0x00
@@ -46,6 +46,8 @@ UART read:  0x6 : 0x30
 UART read:  0x2 : 0x01
 UART write: 0x4 : 0x17
 UART read:  0x4 : 0x17
+UART read:  0x6 : 0x70
+UART read:  0x2 : 0x01
 UART write: 0x4 : 0x13
 UART read:  0x4 : 0x13
 UART read:  0x2 : 0x00
@@ -63,7 +65,7 @@ UART read:  0x4 : 0x10
 UART read:  0x2 : 0x00
 UART read:  0x6 : 0x0B
 UART read:  0x2 : 0x01
-6900000000 fs: UART: Checking interrupt priority control...                               
+7140 ns: UART: Checking interrupt priority control...                               
 UART write: 0x4 : 0x11
 UART write: 0x4 : 0x10
 UART write: 0x0 : 0x12
@@ -93,9 +95,9 @@ UART read:  0x2 : 0x04
 UART read:  0x0 : 0x18
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-400740000000 fs: UART: Setting LCR to 0x00                                                  
+400980 ns: UART: Setting LCR to 0x00                                                  
 UART write: 0x3 : 0x00
-400830000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+401070 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -104,7 +106,7 @@ UART read:  0x0 : 0x15
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-558000000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+558240 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -175,7 +177,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-1347300000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+1347540 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -189,7 +191,7 @@ UART read:  0x0 : 0x0A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-1583160000000 fs: UART: Break control test                                                   
+1583400 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x40
 UART read:  0x3 : 0x40
 UART read:  0x2 : 0x06
@@ -203,9 +205,9 @@ UART write: 0x3 : 0x00
 UART read:  0x3 : 0x00
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-1897140000000 fs: UART: Setting LCR to 0x01                                                  
+1897380 ns: UART: Setting LCR to 0x01                                                  
 UART write: 0x3 : 0x01
-1897230000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+1897470 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -214,7 +216,7 @@ UART read:  0x0 : 0x15
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-2071740000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+2071980 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -285,7 +287,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-2947740000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+2947980 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -299,7 +301,7 @@ UART read:  0x0 : 0x2A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-3209610000000 fs: UART: Break control test                                                   
+3209850 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x41
 UART read:  0x3 : 0x41
 UART read:  0x2 : 0x06
@@ -313,9 +315,9 @@ UART write: 0x3 : 0x01
 UART read:  0x3 : 0x01
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-3558330000000 fs: UART: Setting LCR to 0x02                                                  
+3558570 ns: UART: Setting LCR to 0x02                                                  
 UART write: 0x3 : 0x02
-3558420000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+3558660 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -324,7 +326,7 @@ UART read:  0x0 : 0x55
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-3750270000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+3750510 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -395,7 +397,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-4712970000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+4713210 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -409,7 +411,7 @@ UART read:  0x0 : 0x2A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-5000850000000 fs: UART: Break control test                                                   
+5001090 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x42
 UART read:  0x3 : 0x42
 UART read:  0x2 : 0x06
@@ -423,9 +425,9 @@ UART write: 0x3 : 0x02
 UART read:  0x3 : 0x02
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-5384250000000 fs: UART: Setting LCR to 0x03                                                  
+5384490 ns: UART: Setting LCR to 0x03                                                  
 UART write: 0x3 : 0x03
-5384340000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+5384580 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -434,7 +436,7 @@ UART read:  0x0 : 0x55
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-5593590000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+5593830 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -505,7 +507,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-6643290000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+6643530 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -519,7 +521,7 @@ UART read:  0x0 : 0xAA
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-6957270000000 fs: UART: Break control test                                                   
+6957510 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x43
 UART read:  0x3 : 0x43
 UART read:  0x2 : 0x06
@@ -533,9 +535,9 @@ UART write: 0x3 : 0x03
 UART read:  0x3 : 0x03
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-7375410000000 fs: UART: Setting LCR to 0x04                                                  
+7375650 ns: UART: Setting LCR to 0x04                                                  
 UART write: 0x3 : 0x04
-7375500000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+7375740 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -544,7 +546,7 @@ UART read:  0x0 : 0x15
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-7550010000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+7550250 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -615,7 +617,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-8426010000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+8426250 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -629,7 +631,7 @@ UART read:  0x0 : 0x0A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-8687880000000 fs: UART: Break control test                                                   
+8688120 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x44
 UART read:  0x3 : 0x44
 UART read:  0x2 : 0x06
@@ -643,9 +645,9 @@ UART write: 0x3 : 0x04
 UART read:  0x3 : 0x04
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-9036600000000 fs: UART: Setting LCR to 0x05                                                  
+9036840 ns: UART: Setting LCR to 0x05                                                  
 UART write: 0x3 : 0x05
-9036690000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+9036930 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -654,7 +656,7 @@ UART read:  0x0 : 0x15
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-9228540000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+9228780 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -725,7 +727,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-10191240000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+10191480 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -739,7 +741,7 @@ UART read:  0x0 : 0x2A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-10479120000000 fs: UART: Break control test                                                   
+10479360 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x45
 UART read:  0x3 : 0x45
 UART read:  0x2 : 0x06
@@ -753,9 +755,9 @@ UART write: 0x3 : 0x05
 UART read:  0x3 : 0x05
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-10862520000000 fs: UART: Setting LCR to 0x06                                                  
+10862760 ns: UART: Setting LCR to 0x06                                                  
 UART write: 0x3 : 0x06
-10862610000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+10862850 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -764,7 +766,7 @@ UART read:  0x0 : 0x55
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-11071860000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+11072100 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -835,7 +837,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-12121560000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+12121800 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -849,7 +851,7 @@ UART read:  0x0 : 0x2A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-12435540000000 fs: UART: Break control test                                                   
+12435780 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x46
 UART read:  0x3 : 0x46
 UART read:  0x2 : 0x06
@@ -863,9 +865,9 @@ UART write: 0x3 : 0x06
 UART read:  0x3 : 0x06
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-12853680000000 fs: UART: Setting LCR to 0x07                                                  
+12853920 ns: UART: Setting LCR to 0x07                                                  
 UART write: 0x3 : 0x07
-12853770000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+12854010 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -874,7 +876,7 @@ UART read:  0x0 : 0x55
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-13080360000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+13080600 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -945,7 +947,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-14216760000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+14217000 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -959,7 +961,7 @@ UART read:  0x0 : 0xAA
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-14556750000000 fs: UART: Break control test                                                   
+14556990 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x47
 UART read:  0x3 : 0x47
 UART read:  0x2 : 0x06
@@ -973,9 +975,9 @@ UART write: 0x3 : 0x07
 UART read:  0x3 : 0x07
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-15009630000000 fs: UART: Setting LCR to 0x08                                                  
+15009870 ns: UART: Setting LCR to 0x08                                                  
 UART write: 0x3 : 0x08
-15009720000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+15009960 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -984,7 +986,7 @@ UART read:  0x0 : 0x15
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-15184230000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+15184470 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -1055,7 +1057,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-16060230000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+16060470 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -1069,7 +1071,7 @@ UART read:  0x0 : 0x0A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-16322100000000 fs: UART: Break control test                                                   
+16322340 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x48
 UART read:  0x3 : 0x48
 UART read:  0x2 : 0x06
@@ -1083,9 +1085,9 @@ UART write: 0x3 : 0x08
 UART read:  0x3 : 0x08
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-16670820000000 fs: UART: Setting LCR to 0x09                                                  
+16671060 ns: UART: Setting LCR to 0x09                                                  
 UART write: 0x3 : 0x09
-16670910000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+16671150 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -1094,7 +1096,7 @@ UART read:  0x0 : 0x15
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-16862760000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+16863000 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -1165,7 +1167,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-17825460000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+17825700 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -1179,7 +1181,7 @@ UART read:  0x0 : 0x2A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-18113340000000 fs: UART: Break control test                                                   
+18113580 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x49
 UART read:  0x3 : 0x49
 UART read:  0x2 : 0x06
@@ -1193,9 +1195,9 @@ UART write: 0x3 : 0x09
 UART read:  0x3 : 0x09
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-18496740000000 fs: UART: Setting LCR to 0x0A                                                  
+18496980 ns: UART: Setting LCR to 0x0A                                                  
 UART write: 0x3 : 0x0A
-18496830000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+18497070 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -1204,7 +1206,7 @@ UART read:  0x0 : 0x55
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-18706080000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+18706320 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -1275,7 +1277,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-19755780000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+19756020 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -1289,7 +1291,7 @@ UART read:  0x0 : 0x2A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-20069760000000 fs: UART: Break control test                                                   
+20070000 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x4A
 UART read:  0x3 : 0x4A
 UART read:  0x2 : 0x06
@@ -1303,9 +1305,9 @@ UART write: 0x3 : 0x0A
 UART read:  0x3 : 0x0A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-20487900000000 fs: UART: Setting LCR to 0x0B                                                  
+20488140 ns: UART: Setting LCR to 0x0B                                                  
 UART write: 0x3 : 0x0B
-20487990000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+20488230 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -1314,7 +1316,7 @@ UART read:  0x0 : 0x55
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-20714580000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+20714820 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -1385,7 +1387,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-21850980000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+21851220 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -1399,7 +1401,7 @@ UART read:  0x0 : 0xAA
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-22190970000000 fs: UART: Break control test                                                   
+22191210 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x4B
 UART read:  0x3 : 0x4B
 UART read:  0x2 : 0x06
@@ -1413,9 +1415,9 @@ UART write: 0x3 : 0x0B
 UART read:  0x3 : 0x0B
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-22643850000000 fs: UART: Setting LCR to 0x0C                                                  
+22644090 ns: UART: Setting LCR to 0x0C                                                  
 UART write: 0x3 : 0x0C
-22643940000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+22644180 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -1424,7 +1426,7 @@ UART read:  0x0 : 0x15
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-22835790000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+22836030 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -1495,7 +1497,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-23798490000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+23798730 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -1509,7 +1511,7 @@ UART read:  0x0 : 0x0A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-24086370000000 fs: UART: Break control test                                                   
+24086610 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x4C
 UART read:  0x3 : 0x4C
 UART read:  0x2 : 0x06
@@ -1523,9 +1525,9 @@ UART write: 0x3 : 0x0C
 UART read:  0x3 : 0x0C
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-24469770000000 fs: UART: Setting LCR to 0x0D                                                  
+24470010 ns: UART: Setting LCR to 0x0D                                                  
 UART write: 0x3 : 0x0D
-24469860000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+24470100 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -1534,7 +1536,7 @@ UART read:  0x0 : 0x15
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-24679110000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+24679350 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -1605,7 +1607,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-25728810000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+25729050 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -1619,7 +1621,7 @@ UART read:  0x0 : 0x2A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-26042790000000 fs: UART: Break control test                                                   
+26043030 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x4D
 UART read:  0x3 : 0x4D
 UART read:  0x2 : 0x06
@@ -1633,9 +1635,9 @@ UART write: 0x3 : 0x0D
 UART read:  0x3 : 0x0D
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-26460930000000 fs: UART: Setting LCR to 0x0E                                                  
+26461170 ns: UART: Setting LCR to 0x0E                                                  
 UART write: 0x3 : 0x0E
-26461020000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+26461260 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -1644,7 +1646,7 @@ UART read:  0x0 : 0x55
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-26687610000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+26687850 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -1715,7 +1717,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-27824010000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+27824250 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -1729,7 +1731,7 @@ UART read:  0x0 : 0x2A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-28164000000000 fs: UART: Break control test                                                   
+28164240 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x4E
 UART read:  0x3 : 0x4E
 UART read:  0x2 : 0x06
@@ -1743,9 +1745,9 @@ UART write: 0x3 : 0x0E
 UART read:  0x3 : 0x0E
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-28616880000000 fs: UART: Setting LCR to 0x0F                                                  
+28617120 ns: UART: Setting LCR to 0x0F                                                  
 UART write: 0x3 : 0x0F
-28616970000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+28617210 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -1754,7 +1756,7 @@ UART read:  0x0 : 0x55
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-28860900000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+28861140 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -1825,7 +1827,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-30084000000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+30084240 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -1839,7 +1841,7 @@ UART read:  0x0 : 0xAA
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-30450000000000 fs: UART: Break control test                                                   
+30450240 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x4F
 UART read:  0x3 : 0x4F
 UART read:  0x2 : 0x06
@@ -1853,9 +1855,9 @@ UART write: 0x3 : 0x0F
 UART read:  0x3 : 0x0F
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-30937560000000 fs: UART: Setting LCR to 0x10                                                  
+30937800 ns: UART: Setting LCR to 0x10                                                  
 UART write: 0x3 : 0x10
-30937650000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+30937890 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -1864,7 +1866,7 @@ UART read:  0x0 : 0x15
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-31094820000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+31095060 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -1935,7 +1937,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-31884120000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+31884360 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -1949,7 +1951,7 @@ UART read:  0x0 : 0x0A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-32119980000000 fs: UART: Break control test                                                   
+32120220 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x50
 UART read:  0x3 : 0x50
 UART read:  0x2 : 0x06
@@ -1963,9 +1965,9 @@ UART write: 0x3 : 0x10
 UART read:  0x3 : 0x10
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-32433960000000 fs: UART: Setting LCR to 0x11                                                  
+32434200 ns: UART: Setting LCR to 0x11                                                  
 UART write: 0x3 : 0x11
-32434050000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+32434290 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -1974,7 +1976,7 @@ UART read:  0x0 : 0x15
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-32608560000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+32608800 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -2045,7 +2047,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-33484560000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+33484800 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -2059,7 +2061,7 @@ UART read:  0x0 : 0x2A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-33746430000000 fs: UART: Break control test                                                   
+33746670 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x51
 UART read:  0x3 : 0x51
 UART read:  0x2 : 0x06
@@ -2073,9 +2075,9 @@ UART write: 0x3 : 0x11
 UART read:  0x3 : 0x11
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-34095150000000 fs: UART: Setting LCR to 0x12                                                  
+34095390 ns: UART: Setting LCR to 0x12                                                  
 UART write: 0x3 : 0x12
-34095240000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+34095480 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -2084,7 +2086,7 @@ UART read:  0x0 : 0x55
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-34287090000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+34287330 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -2155,7 +2157,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-35249790000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+35250030 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -2169,7 +2171,7 @@ UART read:  0x0 : 0x2A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-35537670000000 fs: UART: Break control test                                                   
+35537910 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x52
 UART read:  0x3 : 0x52
 UART read:  0x2 : 0x06
@@ -2183,9 +2185,9 @@ UART write: 0x3 : 0x12
 UART read:  0x3 : 0x12
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-35921070000000 fs: UART: Setting LCR to 0x13                                                  
+35921310 ns: UART: Setting LCR to 0x13                                                  
 UART write: 0x3 : 0x13
-35921160000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+35921400 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -2194,7 +2196,7 @@ UART read:  0x0 : 0x55
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-36130410000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+36130650 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -2265,7 +2267,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-37180110000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+37180350 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -2279,7 +2281,7 @@ UART read:  0x0 : 0xAA
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-37494090000000 fs: UART: Break control test                                                   
+37494330 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x53
 UART read:  0x3 : 0x53
 UART read:  0x2 : 0x06
@@ -2293,9 +2295,9 @@ UART write: 0x3 : 0x13
 UART read:  0x3 : 0x13
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-37912230000000 fs: UART: Setting LCR to 0x14                                                  
+37912470 ns: UART: Setting LCR to 0x14                                                  
 UART write: 0x3 : 0x14
-37912320000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+37912560 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -2304,7 +2306,7 @@ UART read:  0x0 : 0x15
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-38086830000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+38087070 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -2375,7 +2377,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-38962830000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+38963070 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -2389,7 +2391,7 @@ UART read:  0x0 : 0x0A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-39224700000000 fs: UART: Break control test                                                   
+39224940 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x54
 UART read:  0x3 : 0x54
 UART read:  0x2 : 0x06
@@ -2403,9 +2405,9 @@ UART write: 0x3 : 0x14
 UART read:  0x3 : 0x14
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-39573420000000 fs: UART: Setting LCR to 0x15                                                  
+39573660 ns: UART: Setting LCR to 0x15                                                  
 UART write: 0x3 : 0x15
-39573510000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+39573750 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -2414,7 +2416,7 @@ UART read:  0x0 : 0x15
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-39765360000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+39765600 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -2485,7 +2487,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-40728060000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+40728300 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -2499,7 +2501,7 @@ UART read:  0x0 : 0x2A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-41015940000000 fs: UART: Break control test                                                   
+41016180 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x55
 UART read:  0x3 : 0x55
 UART read:  0x2 : 0x06
@@ -2513,9 +2515,9 @@ UART write: 0x3 : 0x15
 UART read:  0x3 : 0x15
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-41399340000000 fs: UART: Setting LCR to 0x16                                                  
+41399580 ns: UART: Setting LCR to 0x16                                                  
 UART write: 0x3 : 0x16
-41399430000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+41399670 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -2524,7 +2526,7 @@ UART read:  0x0 : 0x55
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-41608680000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+41608920 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -2595,7 +2597,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-42658380000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+42658620 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -2609,7 +2611,7 @@ UART read:  0x0 : 0x2A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-42972360000000 fs: UART: Break control test                                                   
+42972600 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x56
 UART read:  0x3 : 0x56
 UART read:  0x2 : 0x06
@@ -2623,9 +2625,9 @@ UART write: 0x3 : 0x16
 UART read:  0x3 : 0x16
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-43390500000000 fs: UART: Setting LCR to 0x17                                                  
+43390740 ns: UART: Setting LCR to 0x17                                                  
 UART write: 0x3 : 0x17
-43390590000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+43390830 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -2634,7 +2636,7 @@ UART read:  0x0 : 0x55
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-43617180000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+43617420 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -2705,7 +2707,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-44753580000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+44753820 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -2719,7 +2721,7 @@ UART read:  0x0 : 0xAA
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-45093570000000 fs: UART: Break control test                                                   
+45093810 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x57
 UART read:  0x3 : 0x57
 UART read:  0x2 : 0x06
@@ -2733,9 +2735,9 @@ UART write: 0x3 : 0x17
 UART read:  0x3 : 0x17
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-45546450000000 fs: UART: Setting LCR to 0x18                                                  
+45546690 ns: UART: Setting LCR to 0x18                                                  
 UART write: 0x3 : 0x18
-45546540000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+45546780 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -2744,7 +2746,7 @@ UART read:  0x0 : 0x15
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-45721050000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+45721290 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -2815,7 +2817,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-46597050000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+46597290 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -2829,7 +2831,7 @@ UART read:  0x0 : 0x0A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-46858920000000 fs: UART: Break control test                                                   
+46859160 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x58
 UART read:  0x3 : 0x58
 UART read:  0x2 : 0x06
@@ -2843,9 +2845,9 @@ UART write: 0x3 : 0x18
 UART read:  0x3 : 0x18
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-47207640000000 fs: UART: Setting LCR to 0x19                                                  
+47207880 ns: UART: Setting LCR to 0x19                                                  
 UART write: 0x3 : 0x19
-47207730000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+47207970 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -2854,7 +2856,7 @@ UART read:  0x0 : 0x15
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-47399580000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+47399820 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -2925,7 +2927,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-48362280000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+48362520 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -2939,7 +2941,7 @@ UART read:  0x0 : 0x2A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-48650160000000 fs: UART: Break control test                                                   
+48650400 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x59
 UART read:  0x3 : 0x59
 UART read:  0x2 : 0x06
@@ -2953,9 +2955,9 @@ UART write: 0x3 : 0x19
 UART read:  0x3 : 0x19
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-49033560000000 fs: UART: Setting LCR to 0x1A                                                  
+49033800 ns: UART: Setting LCR to 0x1A                                                  
 UART write: 0x3 : 0x1A
-49033650000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+49033890 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -2964,7 +2966,7 @@ UART read:  0x0 : 0x55
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-49242900000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+49243140 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -3035,7 +3037,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-50292600000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+50292840 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -3049,7 +3051,7 @@ UART read:  0x0 : 0x2A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-50606580000000 fs: UART: Break control test                                                   
+50606820 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x5A
 UART read:  0x3 : 0x5A
 UART read:  0x2 : 0x06
@@ -3063,9 +3065,9 @@ UART write: 0x3 : 0x1A
 UART read:  0x3 : 0x1A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-51024720000000 fs: UART: Setting LCR to 0x1B                                                  
+51024960 ns: UART: Setting LCR to 0x1B                                                  
 UART write: 0x3 : 0x1B
-51024810000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+51025050 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -3074,7 +3076,7 @@ UART read:  0x0 : 0x55
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-51251400000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+51251640 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -3145,7 +3147,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-52387800000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+52388040 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -3159,7 +3161,7 @@ UART read:  0x0 : 0xAA
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-52727790000000 fs: UART: Break control test                                                   
+52728030 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x5B
 UART read:  0x3 : 0x5B
 UART read:  0x2 : 0x06
@@ -3173,9 +3175,9 @@ UART write: 0x3 : 0x1B
 UART read:  0x3 : 0x1B
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-53180670000000 fs: UART: Setting LCR to 0x1C                                                  
+53180910 ns: UART: Setting LCR to 0x1C                                                  
 UART write: 0x3 : 0x1C
-53180760000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+53181000 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -3184,7 +3186,7 @@ UART read:  0x0 : 0x15
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-53372610000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+53372850 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -3255,7 +3257,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-54335310000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+54335550 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -3269,7 +3271,7 @@ UART read:  0x0 : 0x0A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-54623190000000 fs: UART: Break control test                                                   
+54623430 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x5C
 UART read:  0x3 : 0x5C
 UART read:  0x2 : 0x06
@@ -3283,9 +3285,9 @@ UART write: 0x3 : 0x1C
 UART read:  0x3 : 0x1C
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-55006590000000 fs: UART: Setting LCR to 0x1D                                                  
+55006830 ns: UART: Setting LCR to 0x1D                                                  
 UART write: 0x3 : 0x1D
-55006680000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+55006920 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -3294,7 +3296,7 @@ UART read:  0x0 : 0x15
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-55215930000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+55216170 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -3365,7 +3367,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-56265630000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+56265870 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -3379,7 +3381,7 @@ UART read:  0x0 : 0x2A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-56579610000000 fs: UART: Break control test                                                   
+56579850 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x5D
 UART read:  0x3 : 0x5D
 UART read:  0x2 : 0x06
@@ -3393,9 +3395,9 @@ UART write: 0x3 : 0x1D
 UART read:  0x3 : 0x1D
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-56997750000000 fs: UART: Setting LCR to 0x1E                                                  
+56997990 ns: UART: Setting LCR to 0x1E                                                  
 UART write: 0x3 : 0x1E
-56997840000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+56998080 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -3404,7 +3406,7 @@ UART read:  0x0 : 0x55
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-57224430000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+57224670 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -3475,7 +3477,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-58360830000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+58361070 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -3489,7 +3491,7 @@ UART read:  0x0 : 0x2A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-58700820000000 fs: UART: Break control test                                                   
+58701060 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x5E
 UART read:  0x3 : 0x5E
 UART read:  0x2 : 0x06
@@ -3503,9 +3505,9 @@ UART write: 0x3 : 0x1E
 UART read:  0x3 : 0x1E
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-59153700000000 fs: UART: Setting LCR to 0x1F                                                  
+59153940 ns: UART: Setting LCR to 0x1F                                                  
 UART write: 0x3 : 0x1F
-59153790000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+59154030 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -3514,7 +3516,7 @@ UART read:  0x0 : 0x55
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-59397720000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+59397960 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -3585,7 +3587,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-60620820000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+60621060 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -3599,7 +3601,7 @@ UART read:  0x0 : 0xAA
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-60986820000000 fs: UART: Break control test                                                   
+60987060 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x5F
 UART read:  0x3 : 0x5F
 UART read:  0x2 : 0x06
@@ -3613,9 +3615,9 @@ UART write: 0x3 : 0x1F
 UART read:  0x3 : 0x1F
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-61474380000000 fs: UART: Setting LCR to 0x20                                                  
+61474620 ns: UART: Setting LCR to 0x20                                                  
 UART write: 0x3 : 0x20
-61474470000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+61474710 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -3624,7 +3626,7 @@ UART read:  0x0 : 0x15
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-61631640000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+61631880 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -3695,7 +3697,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-62420940000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+62421180 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -3709,7 +3711,7 @@ UART read:  0x0 : 0x0A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-62656800000000 fs: UART: Break control test                                                   
+62657040 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x60
 UART read:  0x3 : 0x60
 UART read:  0x2 : 0x06
@@ -3723,9 +3725,9 @@ UART write: 0x3 : 0x20
 UART read:  0x3 : 0x20
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-62970780000000 fs: UART: Setting LCR to 0x21                                                  
+62971020 ns: UART: Setting LCR to 0x21                                                  
 UART write: 0x3 : 0x21
-62970870000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+62971110 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -3734,7 +3736,7 @@ UART read:  0x0 : 0x15
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-63145380000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+63145620 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -3805,7 +3807,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-64021380000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+64021620 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -3819,7 +3821,7 @@ UART read:  0x0 : 0x2A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-64283250000000 fs: UART: Break control test                                                   
+64283490 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x61
 UART read:  0x3 : 0x61
 UART read:  0x2 : 0x06
@@ -3833,9 +3835,9 @@ UART write: 0x3 : 0x21
 UART read:  0x3 : 0x21
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-64631970000000 fs: UART: Setting LCR to 0x22                                                  
+64632210 ns: UART: Setting LCR to 0x22                                                  
 UART write: 0x3 : 0x22
-64632060000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+64632300 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -3844,7 +3846,7 @@ UART read:  0x0 : 0x55
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-64823910000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+64824150 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -3915,7 +3917,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-65786610000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+65786850 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -3929,7 +3931,7 @@ UART read:  0x0 : 0x2A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-66074490000000 fs: UART: Break control test                                                   
+66074730 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x62
 UART read:  0x3 : 0x62
 UART read:  0x2 : 0x06
@@ -3943,9 +3945,9 @@ UART write: 0x3 : 0x22
 UART read:  0x3 : 0x22
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-66457890000000 fs: UART: Setting LCR to 0x23                                                  
+66458130 ns: UART: Setting LCR to 0x23                                                  
 UART write: 0x3 : 0x23
-66457980000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+66458220 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -3954,7 +3956,7 @@ UART read:  0x0 : 0x55
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-66667230000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+66667470 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -4025,7 +4027,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-67716930000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+67717170 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -4039,7 +4041,7 @@ UART read:  0x0 : 0xAA
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-68030910000000 fs: UART: Break control test                                                   
+68031150 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x63
 UART read:  0x3 : 0x63
 UART read:  0x2 : 0x06
@@ -4053,9 +4055,9 @@ UART write: 0x3 : 0x23
 UART read:  0x3 : 0x23
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-68449050000000 fs: UART: Setting LCR to 0x24                                                  
+68449290 ns: UART: Setting LCR to 0x24                                                  
 UART write: 0x3 : 0x24
-68449140000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+68449380 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -4064,7 +4066,7 @@ UART read:  0x0 : 0x15
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-68623650000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+68623890 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -4135,7 +4137,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-69499650000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+69499890 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -4149,7 +4151,7 @@ UART read:  0x0 : 0x0A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-69761520000000 fs: UART: Break control test                                                   
+69761760 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x64
 UART read:  0x3 : 0x64
 UART read:  0x2 : 0x06
@@ -4163,9 +4165,9 @@ UART write: 0x3 : 0x24
 UART read:  0x3 : 0x24
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-70110240000000 fs: UART: Setting LCR to 0x25                                                  
+70110480 ns: UART: Setting LCR to 0x25                                                  
 UART write: 0x3 : 0x25
-70110330000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+70110570 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -4174,7 +4176,7 @@ UART read:  0x0 : 0x15
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-70302180000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+70302420 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -4245,7 +4247,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-71264880000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+71265120 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -4259,7 +4261,7 @@ UART read:  0x0 : 0x2A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-71552760000000 fs: UART: Break control test                                                   
+71553000 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x65
 UART read:  0x3 : 0x65
 UART read:  0x2 : 0x06
@@ -4273,9 +4275,9 @@ UART write: 0x3 : 0x25
 UART read:  0x3 : 0x25
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-71936160000000 fs: UART: Setting LCR to 0x26                                                  
+71936400 ns: UART: Setting LCR to 0x26                                                  
 UART write: 0x3 : 0x26
-71936250000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+71936490 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -4284,7 +4286,7 @@ UART read:  0x0 : 0x55
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-72145500000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+72145740 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -4355,7 +4357,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-73195200000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+73195440 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -4369,7 +4371,7 @@ UART read:  0x0 : 0x2A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-73509180000000 fs: UART: Break control test                                                   
+73509420 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x66
 UART read:  0x3 : 0x66
 UART read:  0x2 : 0x06
@@ -4383,9 +4385,9 @@ UART write: 0x3 : 0x26
 UART read:  0x3 : 0x26
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-73927320000000 fs: UART: Setting LCR to 0x27                                                  
+73927560 ns: UART: Setting LCR to 0x27                                                  
 UART write: 0x3 : 0x27
-73927410000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+73927650 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -4394,7 +4396,7 @@ UART read:  0x0 : 0x55
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-74154000000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+74154240 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -4465,7 +4467,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-75290400000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+75290640 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -4479,7 +4481,7 @@ UART read:  0x0 : 0xAA
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-75630390000000 fs: UART: Break control test                                                   
+75630630 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x67
 UART read:  0x3 : 0x67
 UART read:  0x2 : 0x06
@@ -4493,9 +4495,9 @@ UART write: 0x3 : 0x27
 UART read:  0x3 : 0x27
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-76083270000000 fs: UART: Setting LCR to 0x28                                                  
+76083510 ns: UART: Setting LCR to 0x28                                                  
 UART write: 0x3 : 0x28
-76083360000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+76083600 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -4504,7 +4506,7 @@ UART read:  0x0 : 0x15
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-76257870000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+76258110 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -4575,7 +4577,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-77133870000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+77134110 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -4589,7 +4591,7 @@ UART read:  0x0 : 0x0A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-77395740000000 fs: UART: Break control test                                                   
+77395980 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x68
 UART read:  0x3 : 0x68
 UART read:  0x2 : 0x06
@@ -4603,9 +4605,9 @@ UART write: 0x3 : 0x28
 UART read:  0x3 : 0x28
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-77744460000000 fs: UART: Setting LCR to 0x29                                                  
+77744700 ns: UART: Setting LCR to 0x29                                                  
 UART write: 0x3 : 0x29
-77744550000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+77744790 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -4614,7 +4616,7 @@ UART read:  0x0 : 0x15
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-77936400000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+77936640 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -4685,7 +4687,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-78899100000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+78899340 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -4699,7 +4701,7 @@ UART read:  0x0 : 0x2A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-79186980000000 fs: UART: Break control test                                                   
+79187220 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x69
 UART read:  0x3 : 0x69
 UART read:  0x2 : 0x06
@@ -4713,9 +4715,9 @@ UART write: 0x3 : 0x29
 UART read:  0x3 : 0x29
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-79570380000000 fs: UART: Setting LCR to 0x2A                                                  
+79570620 ns: UART: Setting LCR to 0x2A                                                  
 UART write: 0x3 : 0x2A
-79570470000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+79570710 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -4724,7 +4726,7 @@ UART read:  0x0 : 0x55
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-79779720000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+79779960 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -4795,7 +4797,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-80829420000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+80829660 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -4809,7 +4811,7 @@ UART read:  0x0 : 0x2A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-81143400000000 fs: UART: Break control test                                                   
+81143640 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x6A
 UART read:  0x3 : 0x6A
 UART read:  0x2 : 0x06
@@ -4823,9 +4825,9 @@ UART write: 0x3 : 0x2A
 UART read:  0x3 : 0x2A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-81561540000000 fs: UART: Setting LCR to 0x2B                                                  
+81561780 ns: UART: Setting LCR to 0x2B                                                  
 UART write: 0x3 : 0x2B
-81561630000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+81561870 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -4834,7 +4836,7 @@ UART read:  0x0 : 0x55
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-81788220000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+81788460 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -4905,7 +4907,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-82924620000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+82924860 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -4919,7 +4921,7 @@ UART read:  0x0 : 0xAA
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-83264610000000 fs: UART: Break control test                                                   
+83264850 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x6B
 UART read:  0x3 : 0x6B
 UART read:  0x2 : 0x06
@@ -4933,9 +4935,9 @@ UART write: 0x3 : 0x2B
 UART read:  0x3 : 0x2B
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-83717490000000 fs: UART: Setting LCR to 0x2C                                                  
+83717730 ns: UART: Setting LCR to 0x2C                                                  
 UART write: 0x3 : 0x2C
-83717580000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+83717820 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -4944,7 +4946,7 @@ UART read:  0x0 : 0x15
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-83909430000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+83909670 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -5015,7 +5017,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-84872130000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+84872370 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -5029,7 +5031,7 @@ UART read:  0x0 : 0x0A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-85160010000000 fs: UART: Break control test                                                   
+85160250 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x6C
 UART read:  0x3 : 0x6C
 UART read:  0x2 : 0x06
@@ -5043,9 +5045,9 @@ UART write: 0x3 : 0x2C
 UART read:  0x3 : 0x2C
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-85543410000000 fs: UART: Setting LCR to 0x2D                                                  
+85543650 ns: UART: Setting LCR to 0x2D                                                  
 UART write: 0x3 : 0x2D
-85543500000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+85543740 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -5054,7 +5056,7 @@ UART read:  0x0 : 0x15
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-85752750000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+85752990 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -5125,7 +5127,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-86802450000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+86802690 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -5139,7 +5141,7 @@ UART read:  0x0 : 0x2A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-87116430000000 fs: UART: Break control test                                                   
+87116670 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x6D
 UART read:  0x3 : 0x6D
 UART read:  0x2 : 0x06
@@ -5153,9 +5155,9 @@ UART write: 0x3 : 0x2D
 UART read:  0x3 : 0x2D
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-87534570000000 fs: UART: Setting LCR to 0x2E                                                  
+87534810 ns: UART: Setting LCR to 0x2E                                                  
 UART write: 0x3 : 0x2E
-87534660000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+87534900 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -5164,7 +5166,7 @@ UART read:  0x0 : 0x55
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-87761250000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+87761490 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -5235,7 +5237,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-88897650000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+88897890 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -5249,7 +5251,7 @@ UART read:  0x0 : 0x2A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-89237640000000 fs: UART: Break control test                                                   
+89237880 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x6E
 UART read:  0x3 : 0x6E
 UART read:  0x2 : 0x06
@@ -5263,9 +5265,9 @@ UART write: 0x3 : 0x2E
 UART read:  0x3 : 0x2E
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-89690520000000 fs: UART: Setting LCR to 0x2F                                                  
+89690760 ns: UART: Setting LCR to 0x2F                                                  
 UART write: 0x3 : 0x2F
-89690610000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+89690850 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -5274,7 +5276,7 @@ UART read:  0x0 : 0x55
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-89934540000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+89934780 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -5345,7 +5347,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-91157640000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+91157880 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -5359,7 +5361,7 @@ UART read:  0x0 : 0xAA
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-91523640000000 fs: UART: Break control test                                                   
+91523880 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x6F
 UART read:  0x3 : 0x6F
 UART read:  0x2 : 0x06
@@ -5373,9 +5375,9 @@ UART write: 0x3 : 0x2F
 UART read:  0x3 : 0x2F
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-92011200000000 fs: UART: Setting LCR to 0x30                                                  
+92011440 ns: UART: Setting LCR to 0x30                                                  
 UART write: 0x3 : 0x30
-92011290000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+92011530 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -5384,7 +5386,7 @@ UART read:  0x0 : 0x15
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-92168460000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+92168700 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -5455,7 +5457,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-92957760000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+92958000 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -5469,7 +5471,7 @@ UART read:  0x0 : 0x0A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-93193620000000 fs: UART: Break control test                                                   
+93193860 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x70
 UART read:  0x3 : 0x70
 UART read:  0x2 : 0x06
@@ -5483,9 +5485,9 @@ UART write: 0x3 : 0x30
 UART read:  0x3 : 0x30
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-93507600000000 fs: UART: Setting LCR to 0x31                                                  
+93507840 ns: UART: Setting LCR to 0x31                                                  
 UART write: 0x3 : 0x31
-93507690000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+93507930 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -5494,7 +5496,7 @@ UART read:  0x0 : 0x15
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-93682200000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+93682440 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -5565,7 +5567,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-94558200000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+94558440 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -5579,7 +5581,7 @@ UART read:  0x0 : 0x2A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-94820070000000 fs: UART: Break control test                                                   
+94820310 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x71
 UART read:  0x3 : 0x71
 UART read:  0x2 : 0x06
@@ -5593,9 +5595,9 @@ UART write: 0x3 : 0x31
 UART read:  0x3 : 0x31
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-95168790000000 fs: UART: Setting LCR to 0x32                                                  
+95169030 ns: UART: Setting LCR to 0x32                                                  
 UART write: 0x3 : 0x32
-95168880000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+95169120 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -5604,7 +5606,7 @@ UART read:  0x0 : 0x55
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-95360730000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+95360970 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -5675,7 +5677,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-96323430000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+96323670 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -5689,7 +5691,7 @@ UART read:  0x0 : 0x2A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-96611310000000 fs: UART: Break control test                                                   
+96611550 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x72
 UART read:  0x3 : 0x72
 UART read:  0x2 : 0x06
@@ -5703,9 +5705,9 @@ UART write: 0x3 : 0x32
 UART read:  0x3 : 0x32
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-96994710000000 fs: UART: Setting LCR to 0x33                                                  
+96994950 ns: UART: Setting LCR to 0x33                                                  
 UART write: 0x3 : 0x33
-96994800000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+96995040 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -5714,7 +5716,7 @@ UART read:  0x0 : 0x55
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-97204050000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+97204290 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -5785,7 +5787,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-98253750000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+98253990 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -5799,7 +5801,7 @@ UART read:  0x0 : 0xAA
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-98567730000000 fs: UART: Break control test                                                   
+98567970 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x73
 UART read:  0x3 : 0x73
 UART read:  0x2 : 0x06
@@ -5813,9 +5815,9 @@ UART write: 0x3 : 0x33
 UART read:  0x3 : 0x33
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-98985870000000 fs: UART: Setting LCR to 0x34                                                  
+98986110 ns: UART: Setting LCR to 0x34                                                  
 UART write: 0x3 : 0x34
-98985960000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+98986200 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -5824,7 +5826,7 @@ UART read:  0x0 : 0x15
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-99160470000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+99160710 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -5895,7 +5897,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-100036470000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+100036710 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -5909,7 +5911,7 @@ UART read:  0x0 : 0x0A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-100298340000000 fs: UART: Break control test                                                   
+100298580 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x74
 UART read:  0x3 : 0x74
 UART read:  0x2 : 0x06
@@ -5923,9 +5925,9 @@ UART write: 0x3 : 0x34
 UART read:  0x3 : 0x34
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-100647060000000 fs: UART: Setting LCR to 0x35                                                  
+100647300 ns: UART: Setting LCR to 0x35                                                  
 UART write: 0x3 : 0x35
-100647150000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+100647390 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -5934,7 +5936,7 @@ UART read:  0x0 : 0x15
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-100839000000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+100839240 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -6005,7 +6007,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-101801700000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+101801940 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -6019,7 +6021,7 @@ UART read:  0x0 : 0x2A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-102089580000000 fs: UART: Break control test                                                   
+102089820 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x75
 UART read:  0x3 : 0x75
 UART read:  0x2 : 0x06
@@ -6033,9 +6035,9 @@ UART write: 0x3 : 0x35
 UART read:  0x3 : 0x35
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-102472980000000 fs: UART: Setting LCR to 0x36                                                  
+102473220 ns: UART: Setting LCR to 0x36                                                  
 UART write: 0x3 : 0x36
-102473070000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+102473310 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -6044,7 +6046,7 @@ UART read:  0x0 : 0x55
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-102682320000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+102682560 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -6115,7 +6117,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-103732020000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+103732260 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -6129,7 +6131,7 @@ UART read:  0x0 : 0x2A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-104046000000000 fs: UART: Break control test                                                   
+104046240 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x76
 UART read:  0x3 : 0x76
 UART read:  0x2 : 0x06
@@ -6143,9 +6145,9 @@ UART write: 0x3 : 0x36
 UART read:  0x3 : 0x36
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-104464140000000 fs: UART: Setting LCR to 0x37                                                  
+104464380 ns: UART: Setting LCR to 0x37                                                  
 UART write: 0x3 : 0x37
-104464230000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+104464470 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -6154,7 +6156,7 @@ UART read:  0x0 : 0x55
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-104690820000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+104691060 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -6225,7 +6227,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-105827220000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+105827460 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -6239,7 +6241,7 @@ UART read:  0x0 : 0xAA
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-106167210000000 fs: UART: Break control test                                                   
+106167450 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x77
 UART read:  0x3 : 0x77
 UART read:  0x2 : 0x06
@@ -6253,9 +6255,9 @@ UART write: 0x3 : 0x37
 UART read:  0x3 : 0x37
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-106620090000000 fs: UART: Setting LCR to 0x38                                                  
+106620330 ns: UART: Setting LCR to 0x38                                                  
 UART write: 0x3 : 0x38
-106620180000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+106620420 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -6264,7 +6266,7 @@ UART read:  0x0 : 0x15
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-106794690000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+106794930 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -6335,7 +6337,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-107670690000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+107670930 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -6349,7 +6351,7 @@ UART read:  0x0 : 0x0A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-107932560000000 fs: UART: Break control test                                                   
+107932800 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x78
 UART read:  0x3 : 0x78
 UART read:  0x2 : 0x06
@@ -6363,9 +6365,9 @@ UART write: 0x3 : 0x38
 UART read:  0x3 : 0x38
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-108281280000000 fs: UART: Setting LCR to 0x39                                                  
+108281520 ns: UART: Setting LCR to 0x39                                                  
 UART write: 0x3 : 0x39
-108281370000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+108281610 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -6374,7 +6376,7 @@ UART read:  0x0 : 0x15
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-108473220000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+108473460 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -6445,7 +6447,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-109435920000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+109436160 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -6459,7 +6461,7 @@ UART read:  0x0 : 0x2A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-109723800000000 fs: UART: Break control test                                                   
+109724040 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x79
 UART read:  0x3 : 0x79
 UART read:  0x2 : 0x06
@@ -6473,9 +6475,9 @@ UART write: 0x3 : 0x39
 UART read:  0x3 : 0x39
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-110107200000000 fs: UART: Setting LCR to 0x3A                                                  
+110107440 ns: UART: Setting LCR to 0x3A                                                  
 UART write: 0x3 : 0x3A
-110107290000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+110107530 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -6484,7 +6486,7 @@ UART read:  0x0 : 0x55
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-110316540000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+110316780 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -6555,7 +6557,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-111366240000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+111366480 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -6569,7 +6571,7 @@ UART read:  0x0 : 0x2A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-111680220000000 fs: UART: Break control test                                                   
+111680460 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x7A
 UART read:  0x3 : 0x7A
 UART read:  0x2 : 0x06
@@ -6583,9 +6585,9 @@ UART write: 0x3 : 0x3A
 UART read:  0x3 : 0x3A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-112098360000000 fs: UART: Setting LCR to 0x3B                                                  
+112098600 ns: UART: Setting LCR to 0x3B                                                  
 UART write: 0x3 : 0x3B
-112098450000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+112098690 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -6594,7 +6596,7 @@ UART read:  0x0 : 0x55
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-112325040000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+112325280 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -6665,7 +6667,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-113461440000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+113461680 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -6679,7 +6681,7 @@ UART read:  0x0 : 0xAA
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-113801430000000 fs: UART: Break control test                                                   
+113801670 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x7B
 UART read:  0x3 : 0x7B
 UART read:  0x2 : 0x06
@@ -6693,9 +6695,9 @@ UART write: 0x3 : 0x3B
 UART read:  0x3 : 0x3B
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-114254310000000 fs: UART: Setting LCR to 0x3C                                                  
+114254550 ns: UART: Setting LCR to 0x3C                                                  
 UART write: 0x3 : 0x3C
-114254400000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+114254640 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -6704,7 +6706,7 @@ UART read:  0x0 : 0x15
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-114446250000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+114446490 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -6775,7 +6777,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-115408950000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+115409190 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -6789,7 +6791,7 @@ UART read:  0x0 : 0x0A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-115696830000000 fs: UART: Break control test                                                   
+115697070 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x7C
 UART read:  0x3 : 0x7C
 UART read:  0x2 : 0x06
@@ -6803,9 +6805,9 @@ UART write: 0x3 : 0x3C
 UART read:  0x3 : 0x3C
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-116080230000000 fs: UART: Setting LCR to 0x3D                                                  
+116080470 ns: UART: Setting LCR to 0x3D                                                  
 UART write: 0x3 : 0x3D
-116080320000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+116080560 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -6814,7 +6816,7 @@ UART read:  0x0 : 0x15
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-116289570000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+116289810 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -6885,7 +6887,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-117339270000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+117339510 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -6899,7 +6901,7 @@ UART read:  0x0 : 0x2A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-117653250000000 fs: UART: Break control test                                                   
+117653490 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x7D
 UART read:  0x3 : 0x7D
 UART read:  0x2 : 0x06
@@ -6913,9 +6915,9 @@ UART write: 0x3 : 0x3D
 UART read:  0x3 : 0x3D
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-118071390000000 fs: UART: Setting LCR to 0x3E                                                  
+118071630 ns: UART: Setting LCR to 0x3E                                                  
 UART write: 0x3 : 0x3E
-118071480000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+118071720 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -6924,7 +6926,7 @@ UART read:  0x0 : 0x55
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-118298070000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+118298310 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -6995,7 +6997,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-119434470000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+119434710 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -7009,7 +7011,7 @@ UART read:  0x0 : 0x2A
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-119774460000000 fs: UART: Break control test                                                   
+119774700 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x7E
 UART read:  0x3 : 0x7E
 UART read:  0x2 : 0x06
@@ -7023,9 +7025,9 @@ UART write: 0x3 : 0x3E
 UART read:  0x3 : 0x3E
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
-120227340000000 fs: UART: Setting LCR to 0x3F                                                  
+120227580 ns: UART: Setting LCR to 0x3F                                                  
 UART write: 0x3 : 0x3F
-120227430000000 fs: UART: Transmission test single byte (FIFO disabled)                        
+120227670 ns: UART: Transmission test single byte (FIFO disabled)                        
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -7034,7 +7036,7 @@ UART read:  0x0 : 0x55
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-120471360000000 fs: UART: Transmission test multiple bytes (FIFO disabled)                     
+120471600 ns: UART: Transmission test multiple bytes (FIFO disabled)                     
 UART read:  0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0x04
@@ -7105,7 +7107,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x09
 UART read:  0x2 : 0x02
 UART read:  0x5 : 0x60
-121694460000000 fs: UART: Transmission test overflow (FIFO disabled)                           
+121694700 ns: UART: Transmission test overflow (FIFO disabled)                           
 UART write: 0x0 : 0x55
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0x04
@@ -7119,7 +7121,7 @@ UART read:  0x0 : 0xAA
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x02
 UART read:  0x2 : 0x01
-122060460000000 fs: UART: Break control test                                                   
+122060700 ns: UART: Break control test                                                   
 UART write: 0x3 : 0x7F
 UART read:  0x3 : 0x7F
 UART read:  0x2 : 0x06
@@ -7134,11 +7136,11 @@ UART read:  0x3 : 0x3F
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0x01
 UART write: 0x3 : 0x00
-122548110000000 fs: UART: Enabling FIFO...                                                     
+122548350 ns: UART: Enabling FIFO...                                                     
 UART write: 0x2 : 0x01
 UART read:  0x2 : 0xC2
 UART read:  0x2 : 0xC1
-122548440000000 fs: UART: Testing FIFO trigger level 1 byte...                                 
+122548680 ns: UART: Testing FIFO trigger level 1 byte...                                 
 UART write: 0x2 : 0x01
 UART write: 0x0 : 0x00
 UART read:  0x2 : 0xCC
@@ -7147,7 +7149,7 @@ UART read:  0x0 : 0x00
 UART read:  0x2 : 0xC2
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0xC1
-122861820000000 fs: UART: Testing FIFO trigger level 4 byte...                                 
+122862060 ns: UART: Testing FIFO trigger level 4 byte...                                 
 UART write: 0x2 : 0x41
 UART write: 0x0 : 0x00
 UART write: 0x0 : 0x01
@@ -7168,7 +7170,7 @@ UART read:  0x0 : 0x00
 UART read:  0x0 : 0x01
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0xC1
-124035900000000 fs: UART: Testing FIFO trigger level 8 byte...                                 
+124036140 ns: UART: Testing FIFO trigger level 8 byte...                                 
 UART write: 0x2 : 0x81
 UART write: 0x0 : 0x00
 UART write: 0x0 : 0x01
@@ -7206,7 +7208,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x01
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0xC1
-125524380000000 fs: UART: Testing FIFO trigger level 14 byte...                                
+125524620 ns: UART: Testing FIFO trigger level 14 byte...                                
 UART write: 0x2 : 0xC1
 UART write: 0x0 : 0x00
 UART write: 0x0 : 0x01
@@ -7261,7 +7263,7 @@ UART read:  0x5 : 0x61
 UART read:  0x0 : 0x01
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0xC1
-127327230000000 fs: UART: Testing FIFO overrun...                                              
+127327470 ns: UART: Testing FIFO overrun...                                              
 UART write: 0x2 : 0x01
 UART write: 0x0 : 0x00
 UART write: 0x0 : 0x01
@@ -7291,14 +7293,14 @@ UART write: 0x2 : 0x03
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0xC2
 UART read:  0x2 : 0xC1
-128736360000000 fs: UART: Miscellaneous FIFO tests...                                          
+128736600 ns: UART: Miscellaneous FIFO tests...                                          
 UART write: 0x3 : 0x03
 UART write: 0x1 : 0x01
 UART read:  0x2 : 0xC1
 UART write: 0x2 : 0xC1
 UART read:  0x2 : 0xC1
 UART read:  0x5 : 0x60
-128736990000000 fs: UART: Sending 8 words                                                      
+128737230 ns: UART: Sending 8 words                                                      
 UART write: 0x0 : 0x00
 UART write: 0x0 : 0x01
 UART write: 0x0 : 0x02
@@ -7310,7 +7312,7 @@ UART write: 0x0 : 0x07
 UART read:  0x2 : 0xC1
 UART read:  0x2 : 0xCC
 UART read:  0x5 : 0x61
-129988050000000 fs: UART: Receiving 8 words                                                    
+129988290 ns: UART: Receiving 8 words                                                    
 UART read:  0x0 : 0x00
 UART read:  0x0 : 0x01
 UART read:  0x0 : 0x02
@@ -7321,7 +7323,7 @@ UART read:  0x0 : 0x06
 UART read:  0x0 : 0x07
 UART read:  0x2 : 0xC1
 UART read:  0x5 : 0x60
-129989250000000 fs: UART: Sending 16 words                                                     
+129989490 ns: UART: Sending 16 words                                                     
 UART write: 0x0 : 0x00
 UART write: 0x0 : 0x01
 UART write: 0x0 : 0x02
@@ -7338,17 +7340,17 @@ UART write: 0x0 : 0x0C
 UART write: 0x0 : 0x0D
 UART write: 0x0 : 0x0E
 UART write: 0x0 : 0x0F
-130407330000000 fs: UART: Receiving 4 words                                                    
+130407570 ns: UART: Receiving 4 words                                                    
 UART read:  0x0 : 0x00
 UART read:  0x0 : 0x01
 UART read:  0x0 : 0x02
 UART read:  0x0 : 0x03
-130407810000000 fs: UART: Sending 4 words                                                      
+130408050 ns: UART: Sending 4 words                                                      
 UART write: 0x0 : 0x00
 UART write: 0x0 : 0x01
 UART write: 0x0 : 0x02
 UART write: 0x0 : 0x03
-131658150000000 fs: UART: Receiving 12 words                                                   
+131658390 ns: UART: Receiving 12 words                                                   
 UART read:  0x0 : 0x04
 UART read:  0x0 : 0x05
 UART read:  0x0 : 0x06
@@ -7361,12 +7363,12 @@ UART read:  0x0 : 0x0C
 UART read:  0x0 : 0x0D
 UART read:  0x0 : 0x0E
 UART read:  0x0 : 0x0F
-132492900000000 fs: UART: Receiving 2 words                                                    
+132493140 ns: UART: Receiving 2 words                                                    
 UART read:  0x0 : 0x00
 UART read:  0x0 : 0x01
 UART read:  0x2 : 0xC1
 UART read:  0x5 : 0x61
-132493380000000 fs: UART: Sending 40 words                                                     
+132493620 ns: UART: Sending 40 words                                                     
 UART write: 0x0 : 0x00
 UART write: 0x0 : 0x01
 UART write: 0x0 : 0x02
@@ -7410,12 +7412,12 @@ UART write: 0x0 : 0x27
 UART read:  0x5 : 0x01
 UART read:  0x5 : 0x63
 UART read:  0x2 : 0xCC
-134997300000000 fs: UART: Receiving 3 words                                                    
+134997540 ns: UART: Receiving 3 words                                                    
 UART read:  0x0 : 0x02
 UART read:  0x0 : 0x03
 UART read:  0x0 : 0x00
 UART read:  0x2 : 0xC1
-134997780000000 fs: UART: Receiving 13 words                                                   
+134998020 ns: UART: Receiving 13 words                                                   
 UART read:  0x0 : 0x01
 UART read:  0x0 : 0x02
 UART read:  0x0 : 0x03
@@ -7431,40 +7433,40 @@ UART read:  0x0 : 0x0C
 UART read:  0x0 : 0x0D
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0xC1
-134999580000000 fs: UART: Testing FIFO error counter...                                        
+134999820 ns: UART: Testing FIFO error counter...                                        
 UART write: 0x1 : 0x05
-134999670000000 fs: UART: Sending 2 words                                                      
+134999910 ns: UART: Sending 2 words                                                      
 UART write: 0x0 : 0x00
 UART write: 0x0 : 0x01
-135208170000000 fs: UART: Sending break                                                        
+135208410 ns: UART: Sending break                                                        
 UART write: 0x3 : 0x43
 UART write: 0x3 : 0x03
 UART read:  0x5 : 0xE1
-135312630000000 fs: UART: Sending 4 words                                                      
+135312870 ns: UART: Sending 4 words                                                      
 UART write: 0x0 : 0x00
 UART write: 0x0 : 0x01
 UART write: 0x0 : 0x02
 UART write: 0x0 : 0x03
-135729630000000 fs: UART: Sending break                                                        
+135729870 ns: UART: Sending break                                                        
 UART write: 0x3 : 0x43
 UART write: 0x3 : 0x03
-135833970000000 fs: UART: Sending 2 words                                                      
+135834210 ns: UART: Sending 2 words                                                      
 UART write: 0x0 : 0x00
 UART write: 0x0 : 0x01
 UART read:  0x5 : 0xE1
 UART read:  0x2 : 0xCC
-136459380000000 fs: UART: Reading 2 words                                                      
+136459620 ns: UART: Reading 2 words                                                      
 UART read:  0x0 : 0x00
 UART read:  0x5 : 0xE1
 UART read:  0x0 : 0x01
 UART read:  0x2 : 0xC6
 UART read:  0x5 : 0xF9
 UART read:  0x5 : 0xE1
-136564260000000 fs: UART: Reading break word                                                   
+136564500 ns: UART: Reading break word                                                   
 UART read:  0x0 : 0x00
 UART read:  0x2 : 0xC1
 UART read:  0x5 : 0xE1
-136564620000000 fs: UART: Reading 4 words                                                      
+136564860 ns: UART: Reading 4 words                                                      
 UART read:  0x0 : 0x00
 UART read:  0x5 : 0xE1
 UART read:  0x0 : 0x01
@@ -7478,14 +7480,14 @@ UART read:  0x2 : 0xC1
 UART read:  0x5 : 0xE1
 UART read:  0x5 : 0xE1
 UART read:  0x5 : 0xE1
-136670340000000 fs: UART: Reading break word                                                   
+136670580 ns: UART: Reading break word                                                   
 UART read:  0x0 : 0x00
 UART read:  0x5 : 0x61
 UART read:  0x0 : 0x00
 UART read:  0x5 : 0x61
 UART read:  0x0 : 0x01
 UART read:  0x5 : 0x60
-136671060000000 fs: UART: Sending break                                                        
+136671300 ns: UART: Sending break                                                        
 UART write: 0x3 : 0x43
 UART write: 0x3 : 0x03
 UART read:  0x2 : 0xC6
@@ -7493,93 +7495,373 @@ UART read:  0x5 : 0xF9
 UART read:  0x2 : 0xC1
 UART read:  0x5 : 0xE1
 UART read:  0x5 : 0xE1
-136776000000000 fs: UART: Reading break word                                                   
+136776240 ns: UART: Reading break word                                                   
 UART read:  0x0 : 0x00
 UART read:  0x5 : 0x60
-136776240000000 fs: UART: FIFO test end                                                        
-136776240000000 fs: UART: Automatic flow control test                                          
+136776480 ns: UART: FIFO test end                                                        
+136776480 ns: UART: Testing FIFO in 64 byte mode...                                      
+UART write: 0x1 : 0x0F
+UART write: 0x2 : 0x27
+UART read:  0x2 : 0xC2
+UART write: 0x3 : 0x83
+UART write: 0x2 : 0x21
+UART write: 0x3 : 0x03
+UART read:  0x2 : 0xE1
+UART read:  0x5 : 0x60
+136777290 ns: UART: Testing FIFO trigger level 1 byte...                                 
+UART write: 0x2 : 0x01
+UART read:  0x2 : 0xE1
+UART write: 0x0 : 0x00
+UART read:  0x2 : 0xEC
+UART read:  0x5 : 0x61
+UART read:  0x0 : 0x00
+UART read:  0x2 : 0xE2
+UART read:  0x5 : 0x60
+UART read:  0x2 : 0xE1
+137194950 ns: UART: Testing FIFO trigger level 16 byte...                                
+UART write: 0x2 : 0x41
+UART write: 0x0 : 0x00
+UART write: 0x0 : 0x01
+UART write: 0x0 : 0x02
+UART write: 0x0 : 0x03
+UART write: 0x0 : 0x04
+UART write: 0x0 : 0x05
+UART write: 0x0 : 0x06
+UART write: 0x0 : 0x07
+UART write: 0x0 : 0x08
+UART write: 0x0 : 0x09
+UART write: 0x0 : 0x0A
+UART write: 0x0 : 0x0B
+UART write: 0x0 : 0x0C
+UART write: 0x0 : 0x0D
+UART write: 0x0 : 0x0E
+UART read:  0x2 : 0xEC
+UART read:  0x5 : 0x61
+UART read:  0x0 : 0x00
+UART read:  0x2 : 0xE2
+UART read:  0x2 : 0xE1
+UART write: 0x0 : 0x00
+UART write: 0x0 : 0x01
+UART write: 0x0 : 0x02
+UART read:  0x2 : 0xE4
+UART read:  0x5 : 0x61
+UART read:  0x0 : 0x01
+UART read:  0x2 : 0xE4
+UART read:  0x0 : 0x02
+UART read:  0x2 : 0xE2
+UART read:  0x0 : 0x03
+UART read:  0x0 : 0x04
+UART read:  0x0 : 0x05
+UART read:  0x0 : 0x06
+UART read:  0x0 : 0x07
+UART read:  0x0 : 0x08
+UART read:  0x0 : 0x09
+UART read:  0x0 : 0x0A
+UART read:  0x0 : 0x0B
+UART read:  0x0 : 0x0C
+UART read:  0x0 : 0x0D
+UART read:  0x0 : 0x0E
+UART read:  0x0 : 0x00
+UART read:  0x0 : 0x01
+UART read:  0x0 : 0x02
+UART read:  0x5 : 0x60
+UART read:  0x2 : 0xE1
+139074990 ns: UART: Testing FIFO trigger level 32 byte...                                
+UART write: 0x2 : 0x81
+UART write: 0x0 : 0x00
+UART write: 0x0 : 0x01
+UART write: 0x0 : 0x02
+UART write: 0x0 : 0x03
+UART write: 0x0 : 0x04
+UART write: 0x0 : 0x05
+UART write: 0x0 : 0x06
+UART write: 0x0 : 0x07
+UART write: 0x0 : 0x08
+UART write: 0x0 : 0x09
+UART write: 0x0 : 0x0A
+UART write: 0x0 : 0x0B
+UART write: 0x0 : 0x0C
+UART write: 0x0 : 0x0D
+UART write: 0x0 : 0x0E
+UART write: 0x0 : 0x0F
+UART write: 0x0 : 0x10
+UART write: 0x0 : 0x11
+UART write: 0x0 : 0x12
+UART write: 0x0 : 0x13
+UART write: 0x0 : 0x14
+UART write: 0x0 : 0x15
+UART write: 0x0 : 0x16
+UART write: 0x0 : 0x17
+UART write: 0x0 : 0x18
+UART write: 0x0 : 0x19
+UART write: 0x0 : 0x1A
+UART write: 0x0 : 0x1B
+UART write: 0x0 : 0x1C
+UART write: 0x0 : 0x1D
+UART write: 0x0 : 0x1E
+UART read:  0x2 : 0xEC
+UART read:  0x5 : 0x61
+UART read:  0x0 : 0x00
+UART read:  0x2 : 0xE2
+UART read:  0x2 : 0xE1
+UART write: 0x0 : 0x00
+UART write: 0x0 : 0x01
+UART write: 0x0 : 0x02
+UART read:  0x2 : 0xE4
+UART read:  0x5 : 0x61
+UART read:  0x0 : 0x01
+UART read:  0x2 : 0xE4
+UART read:  0x0 : 0x02
+UART read:  0x2 : 0xE2
+UART read:  0x0 : 0x03
+UART read:  0x0 : 0x04
+UART read:  0x0 : 0x05
+UART read:  0x0 : 0x06
+UART read:  0x0 : 0x07
+UART read:  0x0 : 0x08
+UART read:  0x0 : 0x09
+UART read:  0x0 : 0x0A
+UART read:  0x0 : 0x0B
+UART read:  0x0 : 0x0C
+UART read:  0x0 : 0x0D
+UART read:  0x0 : 0x0E
+UART read:  0x0 : 0x0F
+UART read:  0x0 : 0x10
+UART read:  0x0 : 0x11
+UART read:  0x0 : 0x12
+UART read:  0x0 : 0x13
+UART read:  0x0 : 0x14
+UART read:  0x0 : 0x15
+UART read:  0x0 : 0x16
+UART read:  0x0 : 0x17
+UART read:  0x0 : 0x18
+UART read:  0x0 : 0x19
+UART read:  0x0 : 0x1A
+UART read:  0x0 : 0x1B
+UART read:  0x0 : 0x1C
+UART read:  0x0 : 0x1D
+UART read:  0x0 : 0x1E
+UART read:  0x0 : 0x00
+UART read:  0x0 : 0x01
+UART read:  0x0 : 0x02
+UART read:  0x5 : 0x60
+UART read:  0x2 : 0xE1
+142625040 ns: UART: Testing FIFO trigger level 56 byte...                                
+UART write: 0x2 : 0xC1
+UART write: 0x0 : 0x00
+UART write: 0x0 : 0x01
+UART write: 0x0 : 0x02
+UART write: 0x0 : 0x03
+UART write: 0x0 : 0x04
+UART write: 0x0 : 0x05
+UART write: 0x0 : 0x06
+UART write: 0x0 : 0x07
+UART write: 0x0 : 0x08
+UART write: 0x0 : 0x09
+UART write: 0x0 : 0x0A
+UART write: 0x0 : 0x0B
+UART write: 0x0 : 0x0C
+UART write: 0x0 : 0x0D
+UART write: 0x0 : 0x0E
+UART write: 0x0 : 0x0F
+UART write: 0x0 : 0x10
+UART write: 0x0 : 0x11
+UART write: 0x0 : 0x12
+UART write: 0x0 : 0x13
+UART write: 0x0 : 0x14
+UART write: 0x0 : 0x15
+UART write: 0x0 : 0x16
+UART write: 0x0 : 0x17
+UART write: 0x0 : 0x18
+UART write: 0x0 : 0x19
+UART write: 0x0 : 0x1A
+UART write: 0x0 : 0x1B
+UART write: 0x0 : 0x1C
+UART write: 0x0 : 0x1D
+UART write: 0x0 : 0x1E
+UART write: 0x0 : 0x1F
+UART write: 0x0 : 0x20
+UART write: 0x0 : 0x21
+UART write: 0x0 : 0x22
+UART write: 0x0 : 0x23
+UART write: 0x0 : 0x24
+UART write: 0x0 : 0x25
+UART write: 0x0 : 0x26
+UART write: 0x0 : 0x27
+UART write: 0x0 : 0x28
+UART write: 0x0 : 0x29
+UART write: 0x0 : 0x2A
+UART write: 0x0 : 0x2B
+UART write: 0x0 : 0x2C
+UART write: 0x0 : 0x2D
+UART write: 0x0 : 0x2E
+UART write: 0x0 : 0x2F
+UART write: 0x0 : 0x30
+UART write: 0x0 : 0x31
+UART write: 0x0 : 0x32
+UART write: 0x0 : 0x33
+UART write: 0x0 : 0x34
+UART write: 0x0 : 0x35
+UART write: 0x0 : 0x36
+UART read:  0x2 : 0xEC
+UART read:  0x5 : 0x61
+UART read:  0x0 : 0x00
+UART read:  0x2 : 0xE2
+UART read:  0x2 : 0xE1
+UART write: 0x0 : 0x00
+UART write: 0x0 : 0x01
+UART write: 0x0 : 0x02
+UART read:  0x2 : 0xE4
+UART read:  0x5 : 0x61
+UART read:  0x0 : 0x01
+UART read:  0x2 : 0xE4
+UART read:  0x0 : 0x02
+UART read:  0x2 : 0xE2
+UART read:  0x0 : 0x03
+UART read:  0x0 : 0x04
+UART read:  0x0 : 0x05
+UART read:  0x0 : 0x06
+UART read:  0x0 : 0x07
+UART read:  0x0 : 0x08
+UART read:  0x0 : 0x09
+UART read:  0x0 : 0x0A
+UART read:  0x0 : 0x0B
+UART read:  0x0 : 0x0C
+UART read:  0x0 : 0x0D
+UART read:  0x0 : 0x0E
+UART read:  0x0 : 0x0F
+UART read:  0x0 : 0x10
+UART read:  0x0 : 0x11
+UART read:  0x0 : 0x12
+UART read:  0x0 : 0x13
+UART read:  0x0 : 0x14
+UART read:  0x0 : 0x15
+UART read:  0x0 : 0x16
+UART read:  0x0 : 0x17
+UART read:  0x0 : 0x18
+UART read:  0x0 : 0x19
+UART read:  0x0 : 0x1A
+UART read:  0x0 : 0x1B
+UART read:  0x0 : 0x1C
+UART read:  0x0 : 0x1D
+UART read:  0x0 : 0x1E
+UART read:  0x0 : 0x1F
+UART read:  0x0 : 0x20
+UART read:  0x0 : 0x21
+UART read:  0x0 : 0x22
+UART read:  0x0 : 0x23
+UART read:  0x0 : 0x24
+UART read:  0x0 : 0x25
+UART read:  0x0 : 0x26
+UART read:  0x0 : 0x27
+UART read:  0x0 : 0x28
+UART read:  0x0 : 0x29
+UART read:  0x0 : 0x2A
+UART read:  0x0 : 0x2B
+UART read:  0x0 : 0x2C
+UART read:  0x0 : 0x2D
+UART read:  0x0 : 0x2E
+UART read:  0x0 : 0x2F
+UART read:  0x0 : 0x30
+UART read:  0x0 : 0x31
+UART read:  0x0 : 0x32
+UART read:  0x0 : 0x33
+UART read:  0x0 : 0x34
+UART read:  0x0 : 0x35
+UART read:  0x0 : 0x36
+UART read:  0x0 : 0x00
+UART read:  0x0 : 0x01
+UART read:  0x0 : 0x02
+UART read:  0x5 : 0x60
+UART read:  0x2 : 0xE1
+UART write: 0x3 : 0x83
+UART write: 0x2 : 0xC1
+UART write: 0x3 : 0x03
+UART read:  0x2 : 0xC1
+148680540 ns: UART: FIFO64 test end                                                      
+148680540 ns: UART: Automatic flow control test                                          
 UART write: 0x3 : 0x03
 UART read:  0x3 : 0x03
 UART write: 0x1 : 0x0F
 UART read:  0x1 : 0x0F
-136776660000000 fs: UART: Setting FIFO trigger level to 4 bytes                                
+148680960 ns: UART: Setting FIFO trigger level to 4 bytes                                
 UART write: 0x2 : 0x41
 UART read:  0x2 : 0xC2
 UART read:  0x2 : 0xC1
-136776990000000 fs: UART: Enabling Auto-CTS                                                    
+148681290 ns: UART: Enabling Auto-CTS                                                    
 UART write: 0x4 : 0x30
 UART read:  0x6 : 0x00
 UART read:  0x2 : 0xC1
-136777320000000 fs: UART: Send 3 words                                                         
+148681620 ns: UART: Send 3 words                                                         
 UART write: 0x0 : 0x00
 UART write: 0x0 : 0x01
 UART write: 0x0 : 0x02
-137402580000000 fs: UART: Expecting no data was sent                                           
+149306880 ns: UART: Expecting no data was sent                                           
 UART read:  0x2 : 0xC1
 UART read:  0x5 : 0x00
-137402820000000 fs: UART: Enabling Auto-RTS                                                    
+149307120 ns: UART: Enabling Auto-RTS                                                    
 UART write: 0x4 : 0x32
-137402910000000 fs: UART: Check if CTS is enabled                                              
+149307210 ns: UART: Check if CTS is enabled                                              
 UART read:  0x2 : 0xC1
 UART read:  0x6 : 0x11
 UART read:  0x2 : 0xCC
 UART read:  0x5 : 0x61
-138236700000000 fs: UART: Check if CTS is enabled                                              
+150141000 ns: UART: Check if CTS is enabled                                              
 UART read:  0x6 : 0x10
-138236820000000 fs: UART: Send 1 word                                                          
+150141120 ns: UART: Send 1 word                                                          
 UART write: 0x0 : 0x00
-138445230000000 fs: UART: Check if CTS is disabled                                             
+150349530 ns: UART: Check if CTS is disabled                                             
 UART read:  0x6 : 0x01
-138445350000000 fs: UART: Check LSR                                                            
+150349650 ns: UART: Check LSR                                                            
 UART read:  0x5 : 0x61
 UART read:  0x2 : 0xCC
-138445590000000 fs: UART: Receive 3 words                                                      
+150349890 ns: UART: Receive 3 words                                                      
 UART read:  0x0 : 0x00
 UART read:  0x0 : 0x01
 UART read:  0x0 : 0x02
-138445950000000 fs: UART: Check if CTS is disabled                                             
+150350250 ns: UART: Check if CTS is disabled                                             
 UART read:  0x6 : 0x00
-138446070000000 fs: UART: Receive 1 word                                                       
+150350370 ns: UART: Receive 1 word                                                       
 UART read:  0x0 : 0x00
-138446190000000 fs: UART: Check LSR                                                            
+150350490 ns: UART: Check LSR                                                            
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0xC2
 UART read:  0x2 : 0xC1
-138446550000000 fs: UART: Check if CTS is enabled again                                        
+150350850 ns: UART: Check if CTS is enabled again                                        
 UART read:  0x6 : 0x11
-138446670000000 fs: UART: Send 6 words                                                         
+150350970 ns: UART: Send 6 words                                                         
 UART write: 0x0 : 0x00
 UART write: 0x0 : 0x01
 UART write: 0x0 : 0x02
 UART write: 0x0 : 0x03
 UART write: 0x0 : 0x04
 UART write: 0x0 : 0x00
-138863850000000 fs: UART: Check if CTS is disabled                                             
+150768150 ns: UART: Check if CTS is disabled                                             
 UART read:  0x6 : 0x01
-138863970000000 fs: UART: Check LSR                                                            
+150768270 ns: UART: Check LSR                                                            
 UART read:  0x5 : 0x01
-138968250000000 fs: UART: Receive 5 words                                                      
+150872550 ns: UART: Receive 5 words                                                      
 UART read:  0x0 : 0x00
 UART read:  0x0 : 0x01
 UART read:  0x0 : 0x02
 UART read:  0x0 : 0x03
 UART read:  0x0 : 0x04
 UART read:  0x2 : 0xC1
-139177290000000 fs: UART: Check LSR                                                            
+151081590 ns: UART: Check LSR                                                            
 UART read:  0x5 : 0x61
-139177410000000 fs: UART: Check if CTS is enabled again                                        
+151081710 ns: UART: Check if CTS is enabled again                                        
 UART read:  0x6 : 0x11
-139177530000000 fs: UART: Receive 1 words                                                      
+151081830 ns: UART: Receive 1 words                                                      
 UART read:  0x0 : 0x00
-139177650000000 fs: UART: Check LSR                                                            
+151081950 ns: UART: Check LSR                                                            
 UART read:  0x5 : 0x60
 UART read:  0x2 : 0xC2
 UART read:  0x2 : 0xC1
-139178010000000 fs: UART: Check if CTS is enabled                                              
+151082310 ns: UART: Check if CTS is enabled                                              
 UART read:  0x6 : 0x10
-139178130000000 fs: UART: Disable Automatic flow control                                       
+151082430 ns: UART: Disable Automatic flow control                                       
 UART write: 0x4 : 0x10
 UART read:  0x6 : 0x01
 UART read:  0x2 : 0xC1
 UART read:  0x4 : 0x10
-139178580000000 fs: UART: Automatic flow control test finished                                 
+151082880 ns: UART: Automatic flow control test finished                                 
