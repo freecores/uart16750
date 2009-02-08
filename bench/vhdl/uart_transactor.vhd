@@ -22,8 +22,6 @@
 
 LIBRARY IEEE;
 USE IEEE.std_logic_1164.all;
-USE IEEE.std_logic_arith.all;
-USE IEEE.std_logic_unsigned.all;
 
 use std.textio.all;
 use work.uart_package.all;

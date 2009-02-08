@@ -3,12 +3,13 @@
 --
 -- Author:   Sebastian Witt
 -- Date:     29.01.2008
--- Version:  1.3
+-- Version:  1.4
 --
 -- History:  1.0 - Initial version
 --           1.1 - THR empty interrupt register connected to RST
 --           1.2 - Registered outputs
 --           1.3 - Automatic flow control
+--           1.4 - De-assert IIR FIFO64 when FIFO is disabled
 --
 --
 -- This code is free software; you can redistribute it and/or
@@ -403,10 +404,10 @@ begin
     UART_IS_RI:  slib_input_sync port map (CLK, RST, RIN,  iRINs);
 
     -- Input filter for UART control signals
-    UART_IF_CTS: slib_input_filter generic map (SIZE => 4) port map (CLK, RST, iBaudtick2x, iCTSNs, iCTSn);
-    UART_IF_DSR: slib_input_filter generic map (SIZE => 4) port map (CLK, RST, iBaudtick2x, iDSRNs, iDSRn);
-    UART_IF_DCD: slib_input_filter generic map (SIZE => 4) port map (CLK, RST, iBaudtick2x, iDCDNs, iDCDn);
-    UART_IF_RI:  slib_input_filter generic map (SIZE => 4) port map (CLK, RST, iBaudtick2x, iRINs, iRIn);
+    UART_IF_CTS: slib_input_filter generic map (SIZE => 2) port map (CLK, RST, iBaudtick2x, iCTSNs, iCTSn);
+    UART_IF_DSR: slib_input_filter generic map (SIZE => 2) port map (CLK, RST, iBaudtick2x, iDSRNs, iDSRn);
+    UART_IF_DCD: slib_input_filter generic map (SIZE => 2) port map (CLK, RST, iBaudtick2x, iDCDNs, iDCDn);
+    UART_IF_RI:  slib_input_filter generic map (SIZE => 2) port map (CLK, RST, iBaudtick2x, iRINs, iRIn);
 
     -- Sync. input synchronization
     UART_SIS: process (CLK, RST)
@@ -491,7 +492,7 @@ begin
     iIIR_ID2    <= iIIR(3);
     iIIR_FIFO64 <= iIIR(5);
     iIIR(4)  <= '0';
-    iIIR(5)  <= iFCR_FIFO64E;
+    iIIR(5)  <= iFCR_FIFO64E when iFCR_FIFOEnable = '1' else '0';
     iIIR(6)  <= iFCR_FIFOEnable;
     iIIR(7)  <= iFCR_FIFOEnable;
 
@@ -719,7 +720,7 @@ begin
                 iMSR_dDSR <= '0';
             end if;
             -- Trailing edge RI
-            if (iRInRE = '1') then
+            if (iRInFE = '1') then
                 iMSR_TERI <= '1';
             elsif (iMSRRead = '1') then
                 iMSR_TERI <= '0';
